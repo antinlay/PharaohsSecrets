@@ -14,6 +14,8 @@
 		5C20BCFE2C46F2E100612E1E /* ⚙️Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20BCFD2C46F2E100612E1E /* ⚙️Loading.swift */; };
 		5C20BD002C4715B400612E1E /* 🎲Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20BCFF2C4715B400612E1E /* 🎲Menu.swift */; };
 		5C20BD022C471BF400612E1E /* ↺Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20BD012C471BF400612E1E /* ↺Coordinator.swift */; };
+		5C20BD042C47C78A00612E1E /* 1️⃣History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20BD032C47C78A00612E1E /* 1️⃣History.swift */; };
+		5C20BD062C47CD7500612E1E /* 🧩Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20BD052C47CD7500612E1E /* 🧩Fonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		5C20BCFD2C46F2E100612E1E /* ⚙️Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "⚙️Loading.swift"; sourceTree = "<group>"; };
 		5C20BCFF2C4715B400612E1E /* 🎲Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎲Menu.swift"; sourceTree = "<group>"; };
 		5C20BD012C471BF400612E1E /* ↺Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "↺Coordinator.swift"; sourceTree = "<group>"; };
+		5C20BD032C47C78A00612E1E /* 1️⃣History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1️⃣History.swift"; sourceTree = "<group>"; };
+		5C20BD052C47CD7500612E1E /* 🧩Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🧩Fonts.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				5C20BCFF2C4715B400612E1E /* 🎲Menu.swift */,
 				5C20BD012C471BF400612E1E /* ↺Coordinator.swift */,
 				5C20BCFD2C46F2E100612E1E /* ⚙️Loading.swift */,
+				5C20BD032C47C78A00612E1E /* 1️⃣History.swift */,
+				5C20BD052C47CD7500612E1E /* 🧩Fonts.swift */,
 				5C20BCF32C46ED3B00612E1E /* Assets.xcassets */,
 				5C20BCF52C46ED3B00612E1E /* Preview Content */,
 			);
@@ -147,7 +153,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C20BCF22C46ED3A00612E1E /* ContentView.swift in Sources */,
+				5C20BD062C47CD7500612E1E /* 🧩Fonts.swift in Sources */,
 				5C20BCFE2C46F2E100612E1E /* ⚙️Loading.swift in Sources */,
+				5C20BD042C47C78A00612E1E /* 1️⃣History.swift in Sources */,
 				5C20BD002C4715B400612E1E /* 🎲Menu.swift in Sources */,
 				5C20BCF02C46ED3A00612E1E /* PharaohsSecretsApp.swift in Sources */,
 				5C20BD022C471BF400612E1E /* ↺Coordinator.swift in Sources */,
