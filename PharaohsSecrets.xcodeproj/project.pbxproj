@@ -19,6 +19,8 @@
 		5CDC5D0F2C47F810000C31BB /* Cabin-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CDC5D0E2C47F810000C31BB /* Cabin-Bold.otf */; };
 		5CDC5D132C48072C000C31BB /* 💍Adventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5D122C48072C000C31BB /* 💍Adventure.swift */; };
 		5CDC5D152C480828000C31BB /* Cabin-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CDC5D142C480828000C31BB /* Cabin-Medium.otf */; };
+		5CDC5D172C486A22000C31BB /* ⏸️Pause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5D162C486A22000C31BB /* ⏸️Pause.swift */; };
+		5CDC5D192C487184000C31BB /* 🧩FullScreenBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5D182C487184000C31BB /* 🧩FullScreenBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		5CDC5D102C47F866000C31BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = PharaohsSecrets/Info.plist; sourceTree = SOURCE_ROOT; };
 		5CDC5D122C48072C000C31BB /* 💍Adventure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💍Adventure.swift"; sourceTree = "<group>"; };
 		5CDC5D142C480828000C31BB /* Cabin-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Medium.otf"; sourceTree = "<group>"; };
+		5CDC5D162C486A22000C31BB /* ⏸️Pause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "⏸️Pause.swift"; sourceTree = "<group>"; };
+		5CDC5D182C487184000C31BB /* 🧩FullScreenBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🧩FullScreenBackground.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 				5C20BD032C47C78A00612E1E /* 📰Histories.swift */,
 				5C20BD052C47CD7500612E1E /* 🧩Fonts.swift */,
 				5CDC5D122C48072C000C31BB /* 💍Adventure.swift */,
+				5CDC5D162C486A22000C31BB /* ⏸️Pause.swift */,
+				5CDC5D182C487184000C31BB /* 🧩FullScreenBackground.swift */,
 				5CDC5D0D2C47F7C7000C31BB /* Fonts */,
 				5C20BCF32C46ED3B00612E1E /* Assets.xcassets */,
 				5C20BCF52C46ED3B00612E1E /* Preview Content */,
@@ -181,6 +187,8 @@
 				5C20BD002C4715B400612E1E /* 🎲Menu.swift in Sources */,
 				5C20BCF02C46ED3A00612E1E /* PharaohsSecretsApp.swift in Sources */,
 				5C20BD022C471BF400612E1E /* ↺Coordinator.swift in Sources */,
+				5CDC5D192C487184000C31BB /* 🧩FullScreenBackground.swift in Sources */,
+				5CDC5D172C486A22000C31BB /* ⏸️Pause.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

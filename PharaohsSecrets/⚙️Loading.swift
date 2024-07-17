@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct Loading: View {
+    private var splash: some View {
+        Image(.Loading.splash)
+            .frame(height: 170)
+    }
+    
     var body: some View {
         ZStack {
-            Image(.Loading.background)
-                .resizable()
-                .ignoresSafeArea()
-            
-            Image(.Loading.splash)
-                .frame(height: 170)
+            fullScreenBackground(.Loading.background)
+            splash
         }
     }
 }

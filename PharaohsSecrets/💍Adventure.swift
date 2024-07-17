@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct Adventure: View {
+    @Environment(\.dismiss) var dismiss
+    
+    private var welcomeText: some View {
+        Text("Welcome, adventurer!")
+            .font(.cabin(.medium, size: 26))
+            .foregroundStyle(.accent)
+    }
+    
     private var artefacts: some View {
         VStack(spacing: 3) {
             HStack(spacing: 3) {
@@ -16,44 +24,48 @@ struct Adventure: View {
             }
             Image(.Adventure.sansara)
         }
-        
     }
     
     private var artefactsDesription: some View {
         VStack(alignment: .leading) {
             Text("Your task is to collect the maximum number of coins and find all the mysterious artifacts.")
                 .font(.cabin(.bold, size: 11))
-                .frame(width: 167, height: 50, alignment: .leading)
+                .frame(width: 167, height: 41, alignment: .leading)
             Text("The magic key will open the way to the most valuable artifacts of the collection.")
                 .font(.cabin(.bold, size: 11))
-                .frame(width: 207, height: 50, alignment: .leading)
+                .frame(width: 207, height: 41, alignment: .leading)
         }
     }
     
     var body: some View {
         ZStack {
-            Image(.Adventure.background)
-                .resizable()
-                .ignoresSafeArea()
+            fullScreenBackground(.Adventure.background)
             Image(.Adventure.tablo)
             VStack {
-                Text("Welcome, adventurer!")
-                    .font(.cabin(.medium, size: 26))
-                    .foregroundStyle(.accent)
+                welcomeText
                 HStack(spacing: 50) {
                     artefactsDesription
                     artefacts
+                        .padding(.bottom, 18)
                 }
                 VStack {
                     trapAndMagicDescription
-                    HStack {
-                        
+                    HStack(spacing: 50) {
                         traps
-                            .padding(.trailing, 60)
                         magicPower
                     }
                 }
             }
+            .foregroundStyle(.dark)
+            
+            Text("Tap to continue")
+                .font(.cabin(.bold, size: 11))
+                .foregroundStyle(.white)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                .padding()
+                .onTapGesture {
+                    dismiss()
+                }
         }
     }
     
@@ -80,11 +92,9 @@ struct Adventure: View {
                 .multilineTextAlignment(.center)
             Text("You will need a weapon to pass through the mazes. And the magic power will help restore strength and health!")
                 .font(.cabin(.bold, size: 11))
-                .frame(width: 194, height: 45, alignment: .leading)
+                .frame(width: 190, height: 45, alignment: .leading)
                 .multilineTextAlignment(.center)
-            
         }
-        
     }
 }
 

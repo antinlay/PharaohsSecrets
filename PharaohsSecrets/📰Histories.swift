@@ -41,32 +41,41 @@ struct Histories: View {
                         """]
     @State private var historyIndex = 0
     
+    private var pharaohe: some View {
+        Image(.Menu.pharaohe)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+            .offset(x: -84)
+            .ignoresSafeArea()
+    }
+    
+    private var historyText: some View {
+        Text(histories[historyIndex])
+            .font(.cabin(.bold, size: 22))
+            .foregroundStyle(.white)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
+            .padding()
+    }
+    
+    private var tappedNextImage: some View {
+        Image(.Histories.next)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+            .padding()
+            .onTapGesture {
+                if historyIndex < histories.count - 1 {
+                    historyIndex += 1
+                } else {
+                    // Переход на другое представление
+                }
+            }
+    }
+    
     var body: some View {
         ZStack {
-            Image(.Histories.background)
-                .resizable()
-                .ignoresSafeArea()
-            Image(.Menu.pharaohe)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
-                .offset(x: -84)
-                .ignoresSafeArea()
-            Text(histories[historyIndex])
-                .font(.cabin(.bold, size: 22))
-                .foregroundStyle(.white)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
-                .padding()
+            fullScreenBackground(.Histories.background)
+            pharaohe
+            historyText
                 .animation(.easeOut, value: historyIndex)
-            
-            Image(.Histories.next)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
-                .padding()
-                .onTapGesture {
-                    if historyIndex < histories.count - 1 {
-                        historyIndex += 1
-                    } else {
-                        // Переход на другое представление
-                    }
-                }
+            tappedNextImage
         }
         .transition(.slide)
     }
