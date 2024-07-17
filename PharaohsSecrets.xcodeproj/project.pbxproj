@@ -17,6 +17,8 @@
 		5C20BD042C47C78A00612E1E /* 📰Histories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20BD032C47C78A00612E1E /* 📰Histories.swift */; };
 		5C20BD062C47CD7500612E1E /* 🧩Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20BD052C47CD7500612E1E /* 🧩Fonts.swift */; };
 		5CDC5D0F2C47F810000C31BB /* Cabin-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CDC5D0E2C47F810000C31BB /* Cabin-Bold.otf */; };
+		5CDC5D132C48072C000C31BB /* 💍Adventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5D122C48072C000C31BB /* 💍Adventure.swift */; };
+		5CDC5D152C480828000C31BB /* Cabin-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CDC5D142C480828000C31BB /* Cabin-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		5C20BD052C47CD7500612E1E /* 🧩Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🧩Fonts.swift"; sourceTree = "<group>"; };
 		5CDC5D0E2C47F810000C31BB /* Cabin-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Bold.otf"; sourceTree = "<group>"; };
 		5CDC5D102C47F866000C31BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = PharaohsSecrets/Info.plist; sourceTree = SOURCE_ROOT; };
+		5CDC5D122C48072C000C31BB /* 💍Adventure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💍Adventure.swift"; sourceTree = "<group>"; };
+		5CDC5D142C480828000C31BB /* Cabin-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 				5C20BCFD2C46F2E100612E1E /* ⚙️Loading.swift */,
 				5C20BD032C47C78A00612E1E /* 📰Histories.swift */,
 				5C20BD052C47CD7500612E1E /* 🧩Fonts.swift */,
+				5CDC5D122C48072C000C31BB /* 💍Adventure.swift */,
 				5CDC5D0D2C47F7C7000C31BB /* Fonts */,
 				5C20BCF32C46ED3B00612E1E /* Assets.xcassets */,
 				5C20BCF52C46ED3B00612E1E /* Preview Content */,
@@ -91,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				5CDC5D0E2C47F810000C31BB /* Cabin-Bold.otf */,
+				5CDC5D142C480828000C31BB /* Cabin-Medium.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -155,6 +161,7 @@
 			files = (
 				5CDC5D0F2C47F810000C31BB /* Cabin-Bold.otf in Resources */,
 				5C20BCF72C46ED3B00612E1E /* Preview Assets.xcassets in Resources */,
+				5CDC5D152C480828000C31BB /* Cabin-Medium.otf in Resources */,
 				5C20BCF42C46ED3B00612E1E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,6 +177,7 @@
 				5C20BD062C47CD7500612E1E /* 🧩Fonts.swift in Sources */,
 				5C20BCFE2C46F2E100612E1E /* ⚙️Loading.swift in Sources */,
 				5C20BD042C47C78A00612E1E /* 📰Histories.swift in Sources */,
+				5CDC5D132C48072C000C31BB /* 💍Adventure.swift in Sources */,
 				5C20BD002C4715B400612E1E /* 🎲Menu.swift in Sources */,
 				5C20BCF02C46ED3A00612E1E /* PharaohsSecretsApp.swift in Sources */,
 				5C20BD022C471BF400612E1E /* ↺Coordinator.swift in Sources */,

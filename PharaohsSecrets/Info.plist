@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Cabin-Bold.otf</string>
+		<string>Cabin-Medium.otf</string>
 	</array>
 </dict>
 </plist>
