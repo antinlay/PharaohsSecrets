@@ -23,6 +23,7 @@
 		5CD2E4912C4ECB64002E26B5 /* LeagueGothic-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CD2E4902C4ECB64002E26B5 /* LeagueGothic-Regular.otf */; };
 		5CD2E4932C4ECE30002E26B5 /* 🌈Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2E4922C4ECE30002E26B5 /* 🌈Gradients.swift */; };
 		5CD2E4952C4ED628002E26B5 /* 🥇YouWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2E4942C4ED628002E26B5 /* 🥇YouWin.swift */; };
+		5CD2E4972C4EF699002E26B5 /* 👑Treasury.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2E4962C4EF699002E26B5 /* 👑Treasury.swift */; };
 		5CDC5D0F2C47F810000C31BB /* Cabin-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CDC5D0E2C47F810000C31BB /* Cabin-Bold.otf */; };
 		5CDC5D132C48072C000C31BB /* 💍Adventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5D122C48072C000C31BB /* 💍Adventure.swift */; };
 		5CDC5D152C480828000C31BB /* Cabin-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CDC5D142C480828000C31BB /* Cabin-Medium.otf */; };
@@ -48,6 +49,7 @@
 		5CD2E4902C4ECB64002E26B5 /* LeagueGothic-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LeagueGothic-Regular.otf"; sourceTree = "<group>"; };
 		5CD2E4922C4ECE30002E26B5 /* 🌈Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🌈Gradients.swift"; sourceTree = "<group>"; };
 		5CD2E4942C4ED628002E26B5 /* 🥇YouWin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🥇YouWin.swift"; sourceTree = "<group>"; };
+		5CD2E4962C4EF699002E26B5 /* 👑Treasury.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "👑Treasury.swift"; sourceTree = "<group>"; };
 		5CDC5D0E2C47F810000C31BB /* Cabin-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Bold.otf"; sourceTree = "<group>"; };
 		5CDC5D102C47F866000C31BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = PharaohsSecrets/Info.plist; sourceTree = SOURCE_ROOT; };
 		5CDC5D122C48072C000C31BB /* 💍Adventure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💍Adventure.swift"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				5CD2E4852C4EB8EB002E26B5 /* ☠️History.swift */,
 				5CD2E48E2C4EC8D1002E26B5 /* ❌TryAgain.swift */,
 				5CD2E4942C4ED628002E26B5 /* 🥇YouWin.swift */,
+				5CD2E4962C4EF699002E26B5 /* 👑Treasury.swift */,
 				5C20BD052C47CD7500612E1E /* 🧩Fonts.swift */,
 				5CD2E4922C4ECE30002E26B5 /* 🌈Gradients.swift */,
 				5CDC5D122C48072C000C31BB /* 💍Adventure.swift */,
@@ -234,6 +237,7 @@
 				5C20BD002C4715B400612E1E /* 🎲Menu.swift in Sources */,
 				5CD2E48F2C4EC8D1002E26B5 /* ❌TryAgain.swift in Sources */,
 				5C20BCF02C46ED3A00612E1E /* PharaohsSecretsApp.swift in Sources */,
+				5CD2E4972C4EF699002E26B5 /* 👑Treasury.swift in Sources */,
 				5CD2E4862C4EB8EB002E26B5 /* ☠️History.swift in Sources */,
 				5C20BD022C471BF400612E1E /* ↺Coordinator.swift in Sources */,
 				5CDC5D192C487184000C31BB /* 🧩FullScreenBackground.swift in Sources */,
