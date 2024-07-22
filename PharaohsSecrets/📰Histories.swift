@@ -77,7 +77,6 @@ struct Histories: View {
                 .animation(.easeOut, value: historyIndex)
             tappedNextImage
         }
-        .transition(.slide)
     }
 }
 
