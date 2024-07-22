@@ -19,6 +19,10 @@
 		5CD2E4842C4EB3DA002E26B5 /* 🏆History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2E4832C4EB3DA002E26B5 /* 🏆History.swift */; };
 		5CD2E4862C4EB8EB002E26B5 /* ☠️History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2E4852C4EB8EB002E26B5 /* ☠️History.swift */; };
 		5CD2E4882C4EBFDB002E26B5 /* AlumniSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CD2E4872C4EBFDB002E26B5 /* AlumniSans-Medium.otf */; };
+		5CD2E48F2C4EC8D1002E26B5 /* ❌TryAgain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2E48E2C4EC8D1002E26B5 /* ❌TryAgain.swift */; };
+		5CD2E4912C4ECB64002E26B5 /* LeagueGothic-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CD2E4902C4ECB64002E26B5 /* LeagueGothic-Regular.otf */; };
+		5CD2E4932C4ECE30002E26B5 /* 🌈Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2E4922C4ECE30002E26B5 /* 🌈Gradients.swift */; };
+		5CD2E4952C4ED628002E26B5 /* 🥇YouWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2E4942C4ED628002E26B5 /* 🥇YouWin.swift */; };
 		5CDC5D0F2C47F810000C31BB /* Cabin-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CDC5D0E2C47F810000C31BB /* Cabin-Bold.otf */; };
 		5CDC5D132C48072C000C31BB /* 💍Adventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5D122C48072C000C31BB /* 💍Adventure.swift */; };
 		5CDC5D152C480828000C31BB /* Cabin-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CDC5D142C480828000C31BB /* Cabin-Medium.otf */; };
@@ -40,6 +44,10 @@
 		5CD2E4832C4EB3DA002E26B5 /* 🏆History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🏆History.swift"; sourceTree = "<group>"; };
 		5CD2E4852C4EB8EB002E26B5 /* ☠️History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "☠️History.swift"; sourceTree = "<group>"; };
 		5CD2E4872C4EBFDB002E26B5 /* AlumniSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlumniSans-Medium.otf"; sourceTree = "<group>"; };
+		5CD2E48E2C4EC8D1002E26B5 /* ❌TryAgain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "❌TryAgain.swift"; sourceTree = "<group>"; };
+		5CD2E4902C4ECB64002E26B5 /* LeagueGothic-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LeagueGothic-Regular.otf"; sourceTree = "<group>"; };
+		5CD2E4922C4ECE30002E26B5 /* 🌈Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🌈Gradients.swift"; sourceTree = "<group>"; };
+		5CD2E4942C4ED628002E26B5 /* 🥇YouWin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🥇YouWin.swift"; sourceTree = "<group>"; };
 		5CDC5D0E2C47F810000C31BB /* Cabin-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Bold.otf"; sourceTree = "<group>"; };
 		5CDC5D102C47F866000C31BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = PharaohsSecrets/Info.plist; sourceTree = SOURCE_ROOT; };
 		5CDC5D122C48072C000C31BB /* 💍Adventure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💍Adventure.swift"; sourceTree = "<group>"; };
@@ -87,7 +95,10 @@
 				5C20BD032C47C78A00612E1E /* 📰Histories.swift */,
 				5CD2E4832C4EB3DA002E26B5 /* 🏆History.swift */,
 				5CD2E4852C4EB8EB002E26B5 /* ☠️History.swift */,
+				5CD2E48E2C4EC8D1002E26B5 /* ❌TryAgain.swift */,
+				5CD2E4942C4ED628002E26B5 /* 🥇YouWin.swift */,
 				5C20BD052C47CD7500612E1E /* 🧩Fonts.swift */,
+				5CD2E4922C4ECE30002E26B5 /* 🌈Gradients.swift */,
 				5CDC5D122C48072C000C31BB /* 💍Adventure.swift */,
 				5CDC5D162C486A22000C31BB /* ⏸️Pause.swift */,
 				5CDC5D182C487184000C31BB /* 🧩FullScreenBackground.swift */,
@@ -123,9 +134,18 @@
 			path = AlumniSans;
 			sourceTree = "<group>";
 		};
+		5CD2E48B2C4EC769002E26B5 /* LeagueGothic */ = {
+			isa = PBXGroup;
+			children = (
+				5CD2E4902C4ECB64002E26B5 /* LeagueGothic-Regular.otf */,
+			);
+			path = LeagueGothic;
+			sourceTree = "<group>";
+		};
 		5CDC5D0D2C47F7C7000C31BB /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				5CD2E48B2C4EC769002E26B5 /* LeagueGothic */,
 				5CD2E48A2C4EBFED002E26B5 /* AlumniSans */,
 				5CD2E4892C4EBFE2002E26B5 /* Cabin */,
 			);
@@ -195,6 +215,7 @@
 				5C20BCF72C46ED3B00612E1E /* Preview Assets.xcassets in Resources */,
 				5CDC5D152C480828000C31BB /* Cabin-Medium.otf in Resources */,
 				5C20BCF42C46ED3B00612E1E /* Assets.xcassets in Resources */,
+				5CD2E4912C4ECB64002E26B5 /* LeagueGothic-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,12 +232,15 @@
 				5C20BD042C47C78A00612E1E /* 📰Histories.swift in Sources */,
 				5CDC5D132C48072C000C31BB /* 💍Adventure.swift in Sources */,
 				5C20BD002C4715B400612E1E /* 🎲Menu.swift in Sources */,
+				5CD2E48F2C4EC8D1002E26B5 /* ❌TryAgain.swift in Sources */,
 				5C20BCF02C46ED3A00612E1E /* PharaohsSecretsApp.swift in Sources */,
 				5CD2E4862C4EB8EB002E26B5 /* ☠️History.swift in Sources */,
 				5C20BD022C471BF400612E1E /* ↺Coordinator.swift in Sources */,
 				5CDC5D192C487184000C31BB /* 🧩FullScreenBackground.swift in Sources */,
 				5CDC5D172C486A22000C31BB /* ⏸️Pause.swift in Sources */,
+				5CD2E4952C4ED628002E26B5 /* 🥇YouWin.swift in Sources */,
 				5CD2E4842C4EB3DA002E26B5 /* 🏆History.swift in Sources */,
+				5CD2E4932C4ECE30002E26B5 /* 🌈Gradients.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
