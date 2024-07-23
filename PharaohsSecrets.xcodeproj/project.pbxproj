@@ -30,6 +30,7 @@
 		5CDC5D172C486A22000C31BB /* ⏸️Pause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5D162C486A22000C31BB /* ⏸️Pause.swift */; };
 		5CDC5D192C487184000C31BB /* 🧩FullScreenBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5D182C487184000C31BB /* 🧩FullScreenBackground.swift */; };
 		5CDCCC5B2C502C300054344E /* 🔁NotDiscovered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCCC5A2C502C300054344E /* 🔁NotDiscovered.swift */; };
+		5CDCCC5F2C5046F40054344E /* 🎮Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCCC5E2C5046F40054344E /* 🎮Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		5CDC5D162C486A22000C31BB /* ⏸️Pause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "⏸️Pause.swift"; sourceTree = "<group>"; };
 		5CDC5D182C487184000C31BB /* 🧩FullScreenBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🧩FullScreenBackground.swift"; sourceTree = "<group>"; };
 		5CDCCC5A2C502C300054344E /* 🔁NotDiscovered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔁NotDiscovered.swift"; sourceTree = "<group>"; };
+		5CDCCC5E2C5046F40054344E /* 🎮Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎮Game.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				5CD2E4942C4ED628002E26B5 /* 🥇YouWin.swift */,
 				5CD2E4962C4EF699002E26B5 /* 👑Treasury.swift */,
 				5CDCCC5A2C502C300054344E /* 🔁NotDiscovered.swift */,
+				5CDCCC5E2C5046F40054344E /* 🎮Game.swift */,
 				5C20BD052C47CD7500612E1E /* 🧩Fonts.swift */,
 				5CD2E4922C4ECE30002E26B5 /* 🌈Gradients.swift */,
 				5CDC5D122C48072C000C31BB /* 💍Adventure.swift */,
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C20BCF22C46ED3A00612E1E /* ContentView.swift in Sources */,
+				5CDCCC5F2C5046F40054344E /* 🎮Game.swift in Sources */,
 				5C20BD062C47CD7500612E1E /* 🧩Fonts.swift in Sources */,
 				5C20BCFE2C46F2E100612E1E /* ⚙️Loading.swift in Sources */,
 				5C20BD042C47C78A00612E1E /* 📰Histories.swift in Sources */,
