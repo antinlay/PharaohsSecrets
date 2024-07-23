@@ -21,7 +21,7 @@ struct YouWin: View {
                 .overlay(alignment: .top) {
                     Text("YOU WIN!")
                         .font(.leagueGothic(.regular, size: 89))
-                        .foregroundStyle(Color.yuuWinGradient)
+                        .foregroundStyle(Color.youWinGradient)
                         .padding()
                 }
                 .overlay(alignment: .bottom) {
@@ -40,7 +40,6 @@ struct YouWin: View {
 
                     }
                 }
-            
         }
     }
 }

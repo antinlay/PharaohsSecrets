@@ -29,6 +29,7 @@
 		5CDC5D152C480828000C31BB /* Cabin-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CDC5D142C480828000C31BB /* Cabin-Medium.otf */; };
 		5CDC5D172C486A22000C31BB /* ⏸️Pause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5D162C486A22000C31BB /* ⏸️Pause.swift */; };
 		5CDC5D192C487184000C31BB /* 🧩FullScreenBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5D182C487184000C31BB /* 🧩FullScreenBackground.swift */; };
+		5CDCCC5B2C502C300054344E /* 🔁NotDiscovered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCCC5A2C502C300054344E /* 🔁NotDiscovered.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		5CDC5D142C480828000C31BB /* Cabin-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Medium.otf"; sourceTree = "<group>"; };
 		5CDC5D162C486A22000C31BB /* ⏸️Pause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "⏸️Pause.swift"; sourceTree = "<group>"; };
 		5CDC5D182C487184000C31BB /* 🧩FullScreenBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🧩FullScreenBackground.swift"; sourceTree = "<group>"; };
+		5CDCCC5A2C502C300054344E /* 🔁NotDiscovered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔁NotDiscovered.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				5CD2E48E2C4EC8D1002E26B5 /* ❌TryAgain.swift */,
 				5CD2E4942C4ED628002E26B5 /* 🥇YouWin.swift */,
 				5CD2E4962C4EF699002E26B5 /* 👑Treasury.swift */,
+				5CDCCC5A2C502C300054344E /* 🔁NotDiscovered.swift */,
 				5C20BD052C47CD7500612E1E /* 🧩Fonts.swift */,
 				5CD2E4922C4ECE30002E26B5 /* 🌈Gradients.swift */,
 				5CDC5D122C48072C000C31BB /* 💍Adventure.swift */,
@@ -243,6 +246,7 @@
 				5CDC5D192C487184000C31BB /* 🧩FullScreenBackground.swift in Sources */,
 				5CDC5D172C486A22000C31BB /* ⏸️Pause.swift in Sources */,
 				5CD2E4952C4ED628002E26B5 /* 🥇YouWin.swift in Sources */,
+				5CDCCC5B2C502C300054344E /* 🔁NotDiscovered.swift in Sources */,
 				5CD2E4842C4EB3DA002E26B5 /* 🏆History.swift in Sources */,
 				5CD2E4932C4ECE30002E26B5 /* 🌈Gradients.swift in Sources */,
 			);
