@@ -31,6 +31,7 @@
 		5CDC5D192C487184000C31BB /* 🧩FullScreenBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5D182C487184000C31BB /* 🧩FullScreenBackground.swift */; };
 		5CDCCC5B2C502C300054344E /* 🔁NotDiscovered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCCC5A2C502C300054344E /* 🔁NotDiscovered.swift */; };
 		5CDCCC5F2C5046F40054344E /* 🎮Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCCC5E2C5046F40054344E /* 🎮Game.swift */; };
+		5CDCCC612C51214B0054344E /* ➡️ScrollOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCCC602C51214B0054344E /* ➡️ScrollOffset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		5CDC5D182C487184000C31BB /* 🧩FullScreenBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🧩FullScreenBackground.swift"; sourceTree = "<group>"; };
 		5CDCCC5A2C502C300054344E /* 🔁NotDiscovered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔁NotDiscovered.swift"; sourceTree = "<group>"; };
 		5CDCCC5E2C5046F40054344E /* 🎮Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎮Game.swift"; sourceTree = "<group>"; };
+		5CDCCC602C51214B0054344E /* ➡️ScrollOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "➡️ScrollOffset.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			children = (
 				5C20BCEE2C46ED3A00612E1E /* PharaohsSecrets */,
 				5C20BCED2C46ED3A00612E1E /* Products */,
+				5CDCCC6B2C51665D0054344E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +100,7 @@
 				5C20BCF12C46ED3A00612E1E /* ContentView.swift */,
 				5C20BCFF2C4715B400612E1E /* 🎲Menu.swift */,
 				5C20BD012C471BF400612E1E /* ↺Coordinator.swift */,
+				5CDCCC602C51214B0054344E /* ➡️ScrollOffset.swift */,
 				5C20BCFD2C46F2E100612E1E /* ⚙️Loading.swift */,
 				5C20BD032C47C78A00612E1E /* 📰Histories.swift */,
 				5CD2E4832C4EB3DA002E26B5 /* 🏆History.swift */,
@@ -161,6 +165,13 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		5CDCCC6B2C51665D0054344E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,6 +188,8 @@
 			dependencies = (
 			);
 			name = PharaohsSecrets;
+			packageProductDependencies = (
+			);
 			productName = PharaohsSecrets;
 			productReference = 5C20BCEC2C46ED3A00612E1E /* PharaohsSecrets.app */;
 			productType = "com.apple.product-type.application";
@@ -205,6 +218,8 @@
 				Base,
 			);
 			mainGroup = 5C20BCE32C46ED3A00612E1E;
+			packageReferences = (
+			);
 			productRefGroup = 5C20BCED2C46ED3A00612E1E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -243,6 +258,7 @@
 				5CDC5D132C48072C000C31BB /* 💍Adventure.swift in Sources */,
 				5C20BD002C4715B400612E1E /* 🎲Menu.swift in Sources */,
 				5CD2E48F2C4EC8D1002E26B5 /* ❌TryAgain.swift in Sources */,
+				5CDCCC612C51214B0054344E /* ➡️ScrollOffset.swift in Sources */,
 				5C20BCF02C46ED3A00612E1E /* PharaohsSecretsApp.swift in Sources */,
 				5CD2E4972C4EF699002E26B5 /* 👑Treasury.swift in Sources */,
 				5CD2E4862C4EB8EB002E26B5 /* ☠️History.swift in Sources */,
@@ -395,7 +411,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -428,7 +444,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
