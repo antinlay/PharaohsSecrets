@@ -7,42 +7,10 @@
 
 import SwiftUI
 
-enum ImagesAction: CaseIterable {
-    case stay
-    case start
-    case step
-    case substep
-    case fly
-    case jump
-    case complete
-    case dead
-    
-    var personImage: ImageResource {
-        switch self {
-        case .stay:
-            return .Game.stay
-        case .start:
-            return .Game.start
-        case .step:
-            return .Game.step
-        case .substep:
-            return .Game.substep
-        case .fly:
-            return .Game.fly
-        case .jump:
-            return .Game.jump
-        case .complete:
-            return .Game.complete
-        case .dead:
-            return .Game.dead
-        }
-    }
-}
-
 struct Game: View {
     @Binding var score: Int
     @State var startGame: Bool = false
-    @State var moveImage: ImagesAction = .stay
+    @State var isRunner: Bool = false
     
     @State private var groundOffset: CGFloat = 0
     @State private var velocity: CGFloat = 0
@@ -95,7 +63,7 @@ struct Game: View {
     private var scoreboard: some View {
         Image(.Game.scoreboard)
             .overlay {
-                Text("\(groundOffset)")
+                Text("\(isRunner)")
                     .font(.cabin(.bold, size: 31))
                     .foregroundStyle(.score)
             }
@@ -133,17 +101,8 @@ struct Game: View {
         }
         .frame(maxHeight: .infinity, alignment: .bottom)
         .ignoresSafeArea()
-        //            .content.offset(x: groundOffset, y: 0)
         .animation(.linear, value: groundOffset)
         .scrollDisabled(true)
-//        .onAppear {
-//            if isPressing {
-//                startScrolling()
-//            }
-//        }
-//        .onDisappear {
-//            stopScrolling()
-//        }
     }
     
     private var control: some View {
@@ -161,8 +120,8 @@ struct Game: View {
                             }
                         }
                         .onChanged { _ in
+                            isRunner = isPressing
                             moveToLeft()
-                            startAnimation()
                         }
                 )
                 .padding(.leading, 60)
@@ -181,32 +140,11 @@ struct Game: View {
                             }
                         }
                         .onChanged { _ in
+                            isRunner = isPressing
                             moveToRight()
-                            startAnimation()
                         }
                 )
                 .padding(.trailing, 60)
-        }
-    }
-    
-    private var personImage: ImageResource {
-        switch moveImage {
-        case .stay:
-            return .Game.stay
-        case .start:
-            return .Game.start
-        case .step:
-            return .Game.step
-        case .substep:
-            return .Game.substep
-        case .fly:
-            return .Game.fly
-        case .jump:
-            return .Game.jump
-        case .complete:
-            return .Game.complete
-        case .dead:
-            return .Game.dead
         }
     }
     
@@ -234,36 +172,11 @@ struct Game: View {
         groundOffset -= velocity
     }
     
-    private func startAnimation() {
-        if isPressing {
-            timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
-                switch moveImage {
-                case .stay:
-                    moveImage = .start
-                case .start:
-                    moveImage = .substep
-                case .substep:
-                    moveImage = .step
-                case .step:
-                    moveImage = .stay
-                case .fly:
-                    moveImage = .start
-                case .jump:
-                    moveImage = .substep
-                case .complete:
-                    moveImage = .step
-                case .dead:
-                    moveImage = .stay
-                }
-            }
-        }
-    }
-    
     var body: some View {
         ZStack {
             fullScreenBackground(.Histories.background)
             ground
-            Image(moveImage.personImage)
+            Runner(isPressing: $isRunner)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
                 .padding(.leading, 150)
                 .padding(.bottom)
