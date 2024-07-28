@@ -18,7 +18,8 @@ extension Color {
     
     static var youWinGradient: RadialGradient {
         RadialGradient(
-            gradient: Gradient(colors: [Color(#colorLiteral(red: 0.3215686275, green: 0, blue: 0, alpha: 1)), Color(#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1))]), center: .init(x: 0.4978, y: 0.2),
+            gradient: Gradient(colors: [Color(#colorLiteral(red: 0.3215686275, green: 0, blue: 0, alpha: 1)), Color(#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1))]),
+            center: .init(x: 0.4978, y: 0.2),
             startRadius: 0,
             endRadius: 50
         )
@@ -73,3 +74,4 @@ extension Color {
         )
     }
 }
+
