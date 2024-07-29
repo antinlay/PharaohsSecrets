@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-enum AnimationPhase: Double, CaseIterable {
-    case start = -450
-    case end = 400
-}
-
 struct TreasuryWall: View {
     @Binding var offsetHorizontal: Double
     @Binding var runnerPoint: CGRect
@@ -32,15 +27,20 @@ struct TreasuryWall: View {
     var body: some View {
         ScrollViewReader { proxy in
             ScrollView([.horizontal, .vertical]) {
-                LazyVStack(spacing: 200) {
-                    ForEach(0..<100, id: \.self) { _ in
-                        gridItems
+                LazyHStack(spacing: 1000) {
+                    ForEach(0..<6, id: \.self) { index in
+                        LazyVStack(spacing: 200) {
+                            ForEach(0..<100, id: \.self) { _ in
+                                gridItems
+                            }
+                        }
                     }
                 }
                 .offset(y: offsetVertical)
                 .offset(x: offsetHorizontal)
             }
             .scrollDisabled(true)
+            .scrollIndicators(.never)
             .ignoresSafeArea()
             .task {
                 proxy.scrollTo(99, anchor: .bottom)
