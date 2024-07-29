@@ -35,8 +35,8 @@ struct Runner: View {
     @State private var timer: Timer?
 
     private func startAnimation() {
-        timer?.invalidate() // Остановить предыдущий таймер, если он существует
-        timer = Timer.scheduledTimer(withTimeInterval: 0.35, repeats: true) { _ in
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { _ in
             switch moveImage {
             case .start:
                 moveImage = .step

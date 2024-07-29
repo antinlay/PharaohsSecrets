@@ -31,8 +31,9 @@ struct Control: View {
     
     @GestureState private var isPressing = false
     
-    private let speed: Double = 1 // Скорость перемещения
-    private let deceleration: Double = 0.7 // Коэффициент замедления
+    private let start: Double = 0
+    private let end: Double = -3000
+    private let speed: Double = 2 // Скорость перемещения
     
     private func run(_ toDirection: Direction) {
         timer?.invalidate()
@@ -41,10 +42,14 @@ struct Control: View {
             if isPressing {
                 switch toDirection {
                 case .left:
-                    offset += velocity
+                    if offset <= start {
+                        offset += velocity
+                    }
                     direction = toDirection
                 case .right:
-                    offset -= velocity
+                    if offset >= end {
+                        offset -= velocity
+                    }
                     direction = toDirection
                 }
             }

@@ -15,6 +15,7 @@ enum WallPoints: Double {
 
 struct Game: View {
     @Binding var score: Int
+    @State var runnerPoint = CGRect()
     @State var direction: Direction = .right
     
     @State var offset: Double = 0
@@ -70,17 +71,20 @@ struct Game: View {
     var body: some View {
         ZStack {
             fullScreenBackground(.Histories.background)
-            TreasuryWall(offsetHorizontal: $offset)
-                .offset(x: WallPoints.first.rawValue)
-            TreasuryWall(offsetHorizontal: $offset)
-                .offset(x: WallPoints.second.rawValue)
-            TreasuryWall(offsetHorizontal: $offset)
-                .offset(x: WallPoints.third.rawValue)
+            TreasuryWall(offsetHorizontal: $offset, runnerPoint: $runnerPoint)
             Ground(offset: $offset)
-            Runner(isPressing: $isPressing, direction: $direction)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
-                .padding(.leading, 150)
-                .padding(.bottom)
+            GeometryReader { geometryRunner in
+                ZStack {
+                    Runner(isPressing: $isPressing, direction: $direction)
+                        .position(x: 200, y: 265)
+                        .onChange(of: offset) { _ in
+                            let midX = geometryRunner.frame(in: .global).midX - 120
+                            let midY = geometryRunner.frame(in: .global).midY
+                            
+                            runnerPoint = CGRect(x: midX, y: midY, width: 0, height: 80)
+                        }
+                }
+            }
             scoreboard
                 .padding(.top, 25)
             pause

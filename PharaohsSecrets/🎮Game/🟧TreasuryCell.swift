@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum CellImage {
+enum CellImage: CaseIterable {
     case almaz, bomb, empty, hryst, pendant, ring, sansara, triada
     
     var value: ImageResource {
@@ -33,16 +33,29 @@ enum CellImage {
 }
 
 struct TreasuryCell: View {
+    @Binding var runnerPoint: CGRect
+    @State var randomBox = CellImage.allCases.randomElement() ?? .empty
     var index: Int
+    @State var printTap = ""
     
-    private var randomBox: CellImage {
-        [.almaz, .bomb , .empty, .empty, .empty, .hryst, .pendant, .ring, .sansara, .triada].randomElement() ?? .empty
-    }
     var body: some View {
-        Image(randomBox.value)
+        GeometryReader { geometry in
+            ZStack {
+                Image(randomBox.value)
+                    .onTapGesture {
+                        printTap = "x: \(geometry.frame(in: .global).midX)\ny: \(geometry.frame(in: .global).midY)"
+                    }
+                Text(printTap)
+            }
+            .onChange(of: geometry.frame(in: .global)) { newValue in
+                if newValue.intersects(runnerPoint) {
+                    randomBox = .empty
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    TreasuryCell(index: 1)
+    TreasuryCell(runnerPoint: .constant(CGRect(x: 110, y: 110, width: 10, height: 10)), index: 1)
 }

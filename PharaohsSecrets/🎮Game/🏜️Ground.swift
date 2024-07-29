@@ -13,11 +13,11 @@ struct Ground: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 0) {
-                ForEach(0..<10, id: \.self) { index in
+                ForEach(0..<4, id: \.self) { index in
                     Image(.Game.ground)
                 }
             }
-            .offset(x: offset)
+            .offset(x: offset >= 0 ? 0 : offset)
             .animation(.linear(duration: 0.1), value: offset)
         }
         .frame(maxHeight: .infinity, alignment: .bottom)
