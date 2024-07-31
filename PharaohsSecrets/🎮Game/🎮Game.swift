@@ -67,12 +67,23 @@ struct Game: View {
                 //
             }
     }
+    
+    private var treasuryStop: some View {
+        TreasuryStop()
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+            .padding(.bottom, 26)
+            .offset(x: offset <= -4000 ? 0 : UIScreen.main.bounds.width)
+            .opacity(offset <= -4000 ? 1 : .zero)
+            .animation(.easeInOut(duration: 1.0), value: offset)
+    }
         
     var body: some View {
         ZStack {
             fullScreenBackground(.Histories.background)
             TreasuryWall(offsetHorizontal: $offset, runnerPoint: $runnerPoint)
+                .opacity(offset <= -400 && offset >= -4400 ? 1 : .zero)
             Ground(offset: $offset)
+            treasuryStop
             GeometryReader { geometryRunner in
                 ZStack {
                     Runner(isPressing: $isPressing, direction: $direction)
@@ -85,6 +96,7 @@ struct Game: View {
                         }
                 }
             }
+            Image(.Game.redButton)
             scoreboard
                 .padding(.top, 25)
             pause

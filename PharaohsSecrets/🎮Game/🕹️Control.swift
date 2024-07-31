@@ -32,7 +32,7 @@ struct Control: View {
     @GestureState private var isPressing = false
     
     private let start: Double = 0
-    private let end: Double = -3000
+    private let end: Double = -6000
     private let speed: Double = 2 // Скорость перемещения
     
     private func run(_ toDirection: Direction) {

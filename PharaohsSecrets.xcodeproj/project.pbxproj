@@ -37,6 +37,7 @@
 		5CDCCC722C52A5F20054344E /* 🏜️Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCCC712C52A5F20054344E /* 🏜️Ground.swift */; };
 		5CDCCC742C52A8470054344E /* 💣TreasuryWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCCC732C52A8470054344E /* 💣TreasuryWall.swift */; };
 		5CF1ED842C55C78A001FF530 /* 🟧TreasuryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF1ED832C55C78A001FF530 /* 🟧TreasuryCell.swift */; };
+		5CF672132C5AA6FD0015C64E /* 🚥TreasuryStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF672122C5AA6FD0015C64E /* 🚥TreasuryStop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		5CDCCC712C52A5F20054344E /* 🏜️Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🏜️Ground.swift"; sourceTree = "<group>"; };
 		5CDCCC732C52A8470054344E /* 💣TreasuryWall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💣TreasuryWall.swift"; sourceTree = "<group>"; };
 		5CF1ED832C55C78A001FF530 /* 🟧TreasuryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🟧TreasuryCell.swift"; sourceTree = "<group>"; };
+		5CF672122C5AA6FD0015C64E /* 🚥TreasuryStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🚥TreasuryStop.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				5CDCCC5E2C5046F40054344E /* 🎮Game.swift */,
+				5CF672122C5AA6FD0015C64E /* 🚥TreasuryStop.swift */,
 				5CDCCC732C52A8470054344E /* 💣TreasuryWall.swift */,
 				5CF1ED832C55C78A001FF530 /* 🟧TreasuryCell.swift */,
 				5CDCCC712C52A5F20054344E /* 🏜️Ground.swift */,
@@ -290,6 +293,7 @@
 				5CD2E4862C4EB8EB002E26B5 /* ☠️History.swift in Sources */,
 				5C20BD022C471BF400612E1E /* ↺Coordinator.swift in Sources */,
 				5CDC5D192C487184000C31BB /* 🧩FullScreenBackground.swift in Sources */,
+				5CF672132C5AA6FD0015C64E /* 🚥TreasuryStop.swift in Sources */,
 				5CF1ED842C55C78A001FF530 /* 🟧TreasuryCell.swift in Sources */,
 				5CDC5D172C486A22000C31BB /* ⏸️Pause.swift in Sources */,
 				5CD2E4952C4ED628002E26B5 /* 🥇YouWin.swift in Sources */,

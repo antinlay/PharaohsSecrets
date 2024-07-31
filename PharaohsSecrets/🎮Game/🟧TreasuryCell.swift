@@ -42,6 +42,7 @@ struct TreasuryCell: View {
         GeometryReader { geometry in
             ZStack {
                 Image(randomBox.value)
+                    .animation(.easeOut, value: randomBox)
                     .onTapGesture {
                         printTap = "x: \(geometry.frame(in: .global).midX)\ny: \(geometry.frame(in: .global).midY)"
                     }
