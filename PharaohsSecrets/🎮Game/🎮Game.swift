@@ -72,11 +72,27 @@ struct Game: View {
         TreasuryStop()
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
             .padding(.bottom, 26)
-            .offset(x: offset <= -4000 ? 0 : UIScreen.main.bounds.width)
-            .opacity(offset <= -4000 ? 1 : .zero)
+            .padding(.trailing, 80)
+            .offset(x: offset <= -4600 ? 0 : UIScreen.main.bounds.width)
+            .opacity(offset <= -4600 ? 1 : .zero)
             .animation(.easeInOut(duration: 1.0), value: offset)
     }
-        
+    
+    private var jumpButton: some View {
+        Image(.Game.redButton)
+            .overlay {
+                Text("JUMP")
+                    .font(.cabin(.medium, size: 15))
+                    .foregroundStyle(.white)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
+            .padding(.trailing, 100)
+            .padding(.top, 50)
+            .offset(x: offset <= -5300 ? 0 : UIScreen.main.bounds.width)
+            .opacity(offset <= -5300 ? 1 : .zero)
+            .animation(.easeInOut(duration: 1.0), value: offset)
+    }
+    
     var body: some View {
         ZStack {
             fullScreenBackground(.Histories.background)
@@ -96,7 +112,7 @@ struct Game: View {
                         }
                 }
             }
-            Image(.Game.redButton)
+            jumpButton
             scoreboard
                 .padding(.top, 25)
             pause

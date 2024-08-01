@@ -32,7 +32,7 @@ struct Control: View {
     @GestureState private var isPressing = false
     
     private let start: Double = 0
-    private let end: Double = -6000
+    private let end: Double = -5538
     private let speed: Double = 2 // Скорость перемещения
     
     private func run(_ toDirection: Direction) {
@@ -78,7 +78,7 @@ struct Control: View {
                             run(.left)
                         }
                 )
-                .padding(.leading, 60)
+                .padding(.leading)
             Spacer()
             Image(.Game.control)
                 .rotationEffect(Angle(degrees: 180))
@@ -88,7 +88,7 @@ struct Control: View {
                             run(.right)
                         }
                 )
-                .padding(.trailing, 60)
+                .padding(.trailing)
         }
     }
     
