@@ -55,9 +55,10 @@ struct Game: View {
     
     private var life: some View {
         HStack {
-            Image(.Game.life)
-            Image(.Game.life)
-            Image(.Game.life)
+            ForEach(1..<4) { index in
+                Image(.Game.life)
+                    .opacity(index > score.itemScore.lives ? .zero : 1)
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
@@ -98,8 +99,7 @@ struct Game: View {
     var body: some View {
         ZStack {
             fullScreenBackground(.Histories.background)
-            TreasuryWall(offsetHorizontal: $offset, runnerPoint: $runnerPoint)
-                .opacity(offset <= -400 && offset >= -4400 ? 1 : .zero)
+            ArtefactsWall(offsetHorizontal: $offset, runnerPoint: $runnerPoint)
             Ground(offset: $offset)
             treasuryStop
             GeometryReader { geometryRunner in

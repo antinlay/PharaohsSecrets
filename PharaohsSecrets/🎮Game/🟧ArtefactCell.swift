@@ -1,5 +1,5 @@
 //
-//  🟧TreasureCell.swift
+//  🟧ArtefactCell.swift
 //  PharaohsSecrets
 //
 //  Created by Janiece Eleonour on 28.07.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum TreasureImages: CaseIterable {
+enum ArtefactImages: CaseIterable {
     case almaz, bomb, empty, hryst, pendant, ring, sansara, triada
     
     var value: ImageResource {
@@ -32,11 +32,11 @@ enum TreasureImages: CaseIterable {
     }
 }
 
-struct TreasureCell: View {
+struct ArtefactCell: View {
     @EnvironmentObject var score: Score
     
     @Binding var runnerPoint: CGRect
-    @State var randomBox = TreasureImages.allCases.randomElement() ?? .empty
+    @State var randomBox = ArtefactImages.allCases.randomElement() ?? .empty
     var index: Int
     @State var printTap = ""
     @State private var lastFrame: CGRect = .zero
@@ -53,32 +53,7 @@ struct TreasureCell: View {
             }
             .onChange(of: geometry.frame(in: .global)) { newValue in
                 if newValue.intersects(runnerPoint) {
-                    switch randomBox {
-                    case .bomb:
-                        score.itemScore.lives -= 1
-                    case .sansara:
-                        score.itemScore.keys = true
-                    case .ring:
-                        score.itemScore.lives += 1
-                    case .triada:
-                        score.itemScore.coins += 1
-                    case .almaz:
-                        score.itemScore.weapons = true
-                    case .pendant:
-                        if score.itemScore.weapons {
-                            score.itemScore.weapons = false
-                        } else if score.itemScore.keys {
-                            score.itemScore.keys = false
-                        } else {
-                            score.itemScore.lives -= 1
-                        }
-                    case .hryst:
-                        score.itemScore.lives -= 1
-                    case .empty:
-                        return
-                    }
-                    if randomBox == .bomb {
-                    }
+                    score.scoring(from: randomBox)
                     randomBox = .empty
                 }
             }
@@ -86,7 +61,36 @@ struct TreasureCell: View {
     }
 }
 
+extension Score {
+    func scoring(from box: ArtefactImages) {
+        switch box {
+        case .bomb:
+            itemScore.decrementLives()
+        case .sansara:
+            itemScore.keys = true
+        case .ring:
+            itemScore.incrementLives()
+        case .triada:
+            itemScore.coins += 1
+        case .almaz:
+            itemScore.weapons = true
+        case .pendant:
+            if itemScore.weapons {
+                itemScore.weapons = false
+            } else if itemScore.keys {
+                itemScore.keys = false
+            } else {
+                itemScore.decrementLives()
+            }
+        case .hryst:
+            itemScore.decrementLives()
+        case .empty:
+            return
+        }
+    }
+}
+
 #Preview {
-    TreasureCell(runnerPoint: .constant(CGRect(x: 110, y: 110, width: 10, height: 10)), index: 1)
+    ArtefactCell(runnerPoint: .constant(CGRect(x: 110, y: 110, width: 10, height: 10)), index: 1)
         .environmentObject(Score())
 }

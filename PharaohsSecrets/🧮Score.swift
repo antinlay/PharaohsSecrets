@@ -10,8 +10,25 @@ import SwiftUI
 struct ItemScore {
     var keys: Bool = false
     var weapons: Bool = false
-    var lives: Int = 0
+    private var _lives: Int = 3
     var coins: Int = 0
+    
+    var lives: Int {
+        get {
+            return min(_lives, 3)
+        }
+        set {
+            _lives = min(newValue, 3)
+        }
+    }
+
+    mutating func incrementLives() {
+        lives += 1
+    }
+    
+    mutating func decrementLives() {
+        lives -= 1
+    }
 }
 
 class Score: ObservableObject {
