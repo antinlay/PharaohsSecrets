@@ -35,28 +35,19 @@ enum ArtefactImages: CaseIterable {
 struct ArtefactCell: View {
     @EnvironmentObject var score: Score
     
-    @Binding var runnerPoint: CGRect
     @State var randomBox = ArtefactImages.allCases.randomElement() ?? .empty
     var index: Int
-    @State var printTap = ""
-    @State private var lastFrame: CGRect = .zero
     
     var body: some View {
         GeometryReader { geometry in
-            ZStack {
-                Image(randomBox.value)
-                    .animation(.easeOut, value: randomBox)
-                    .onTapGesture {
-                        printTap = "x: \(geometry.frame(in: .global).midX)\ny: \(geometry.frame(in: .global).midY)"
+            Image(randomBox.value)
+                .animation(.easeOut, value: randomBox)
+                .onChange(of: geometry.frame(in: .global)) { newValue in
+                    if newValue.intersects(score.runnerPoint) {
+                        score.scoring(from: randomBox)
+                        randomBox = .empty
                     }
-                Text(printTap)
-            }
-            .onChange(of: geometry.frame(in: .global)) { newValue in
-                if newValue.intersects(runnerPoint) {
-                    score.scoring(from: randomBox)
-                    randomBox = .empty
                 }
-            }
         }
     }
 }
@@ -91,6 +82,6 @@ extension Score {
 }
 
 #Preview {
-    ArtefactCell(runnerPoint: .constant(CGRect(x: 110, y: 110, width: 10, height: 10)), index: 1)
+    ArtefactCell(index: 1)
         .environmentObject(Score())
 }

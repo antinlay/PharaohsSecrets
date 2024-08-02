@@ -29,8 +29,9 @@ enum ImagesAction: CaseIterable {
 }
 
 struct Runner: View {
+    @EnvironmentObject var score: Score
+    
     @Binding var isPressing: Bool
-    @Binding var direction: Direction
     @State var moveImage: ImagesAction = .start
     @State private var timer: Timer?
 
@@ -57,7 +58,7 @@ struct Runner: View {
 
     var body: some View {
         Image(moveImage.personImage)
-            .scaleEffect(x: direction.value ? 1 : -1)
+            .scaleEffect(x: score.direction.value ? 1 : -1)
             .onAppear {
                 if isPressing {
                     startAnimation()
@@ -77,5 +78,5 @@ struct Runner: View {
 }
 
 #Preview {
-    Runner(isPressing: .constant(true), direction: .constant(.left))
+    Runner(isPressing: .constant(true))
 }

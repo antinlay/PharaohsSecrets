@@ -17,12 +17,9 @@ struct Game: View {
     @EnvironmentObject var router: Router
     @EnvironmentObject var score: Score
     
-    @State var runnerPoint = CGRect()
-    @State var direction: Direction = .right
-    
-    @State var offset: Double = 0
     @State var isPressing: Bool = false
     @State var startGame: Bool = false
+    @State var isPause: Bool = false
     
     private var startText: some View {
         Text("START!")
@@ -61,13 +58,18 @@ struct Game: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .onChange(of: score.itemScore.lives) { newValue in
+            if newValue == 0 {
+                router.navigate(to: .diedHistory)
+            }
+        }
     }
     
     private var pause: some View {
         Image(.Game.pause)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
             .onTapGesture {
-                router.navigate(to: .pause)
+                isPause = true
             }
     }
     
@@ -76,9 +78,9 @@ struct Game: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
             .padding(.bottom, 26)
             .padding(.trailing, 80)
-            .offset(x: offset <= -4600 ? 0 : UIScreen.main.bounds.width)
-            .opacity(offset <= -4600 ? 1 : .zero)
-            .animation(.easeInOut(duration: 1.0), value: offset)
+            .offset(x: score.offset <= -4600 ? 0 : UIScreen.main.bounds.width)
+            .opacity(score.offset <= -4600 ? 1 : .zero)
+            .animation(.easeInOut(duration: 1.0), value: score.offset)
     }
     
     private var jumpButton: some View {
@@ -91,38 +93,39 @@ struct Game: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
             .padding(.trailing, 100)
             .padding(.top, 50)
-            .offset(x: offset <= -5300 ? 0 : UIScreen.main.bounds.width)
-            .opacity(offset <= -5300 ? 1 : .zero)
-            .animation(.easeInOut(duration: 1.0), value: offset)
+            .offset(x: score.offset <= -5300 ? 0 : UIScreen.main.bounds.width)
+            .opacity(score.offset <= -5300 ? 1 : .zero)
+            .animation(.easeInOut(duration: 1.0), value: score.offset)
     }
     
     var body: some View {
         ZStack {
             fullScreenBackground(.Histories.background)
-            ArtefactsWall(offsetHorizontal: $offset, runnerPoint: $runnerPoint)
-            Ground(offset: $offset)
+            ArtefactsWall()
+            Ground()
             treasuryStop
             GeometryReader { geometryRunner in
-                ZStack {
-                    Runner(isPressing: $isPressing, direction: $direction)
-                        .position(x: 200, y: 265)
-                        .onChange(of: offset) { _ in
-                            let midX = geometryRunner.frame(in: .global).midX - 120
-                            let midY = geometryRunner.frame(in: .global).midY
-                            
-                            runnerPoint = CGRect(x: midX, y: midY, width: 0, height: 80)
-                        }
-                }
+                Runner(isPressing: $isPressing)
+                    .position(x: 200, y: 265)
+                    .onChange(of: score.offset) { _ in
+                        let midX = geometryRunner.frame(in: .global).midX - 120
+                        let midY = geometryRunner.frame(in: .global).midY
+                        
+                        score.runnerPoint = CGRect(x: midX, y: midY, width: 0, height: 80)
+                    }
             }
             jumpButton
             scoreboard
                 .padding(.top, 25)
             pause
+                .sheet(isPresented: $isPause) {
+                    Pause()
+                }
                 .padding(.trailing, 65)
                 .padding(.top, 25)
             life
                 .padding(.top, 30)
-            Control(isPressingState: $isPressing, offset: $offset, direction: $direction)
+            Control(isPressingState: $isPressing)
             VStack {
                 startText
                     .padding(.top, 50)

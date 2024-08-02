@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Ground: View {
-    @Binding var offset: Double
+    @EnvironmentObject var score: Score
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -18,16 +18,16 @@ struct Ground: View {
                 }
                 Image(.Game.miniFire)
             }
-            .offset(x: offset >= 0 ? 0 : offset)
-            .animation(.linear(duration: 0.1), value: offset)
+            .offset(x: score.offset >= 0 ? 0 : score.offset)
+            .animation(.linear(duration: 0.1), value: score.offset)
         }
         .frame(maxHeight: .infinity, alignment: .bottom)
         .ignoresSafeArea()
-        .animation(.linear, value: offset)
+        .animation(.linear, value: score.offset)
         .scrollDisabled(true)
     }
 }
 
 #Preview {
-    Ground(offset: .constant(0))
+    Ground()
 }

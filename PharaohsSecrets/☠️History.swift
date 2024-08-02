@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DiedHistory: View {
+    @EnvironmentObject var router: Router
+    
     private var description: String = """
                                         In a recent expedition to the Egyptian pyramids, a
                                         young archaeologist Adam Ryder tragically died.
@@ -46,7 +48,7 @@ struct DiedHistory: View {
                         .font(.cabin(.bold, size: 19))
                         .padding(60)
                         .onTapGesture {
-                                // Переход на другое представление
+                            router.navigate(to: .tryAgain)
                         }
                 }
         }
@@ -55,4 +57,5 @@ struct DiedHistory: View {
 
 #Preview {
     DiedHistory()
+        .environmentObject(Router())
 }

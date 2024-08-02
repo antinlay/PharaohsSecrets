@@ -8,20 +8,32 @@
 import SwiftUI
 
 struct ArtefactsWall: View {
-    @Binding var offsetHorizontal: Double
-    @Binding var runnerPoint: CGRect
-    @State private var offsetVertical: Double = 0
-    @State private var randomBoxes: [ArtefactCell] = []
-    @State private var coordinate = CGRect()
-    @State private var timer: Timer?
+    @EnvironmentObject var score: Score
     
-    @State private var safeArea: Double = -400
+    @State private var offsetVertical: Double = 0
+    @State private var timer: Timer?
     
     private var gridItems: some View {
         LazyVGrid(columns: [GridItem(.fixed(100)), GridItem(.fixed(100)), GridItem(.fixed(100))], spacing: 10) {
             ForEach(1..<10, id: \.self) { index in
-                ArtefactCell(runnerPoint: $runnerPoint, index: index)
+                ArtefactCell(index: index)
                     .frame(width: 100, height: 100)
+            }
+        }
+    }
+    
+    private var verticalGridItems: some View {
+        LazyVStack(spacing: 200) {
+            ForEach(0..<100, id: \.self) { _ in
+                gridItems
+            }
+        }
+    }
+    
+    private var horizontalGridItems: some View {
+        LazyHStack(spacing: 1000) {
+            ForEach(0..<3, id: \.self) { index in
+                verticalGridItems
             }
         }
     }
@@ -29,19 +41,11 @@ struct ArtefactsWall: View {
     var body: some View {
         ScrollViewReader { proxy in
             ScrollView([.horizontal, .vertical]) {
-                LazyHStack(spacing: 1000) {
-                    ForEach(0..<4, id: \.self) { index in
-                        LazyVStack(spacing: 200) {
-                            ForEach(0..<100, id: \.self) { _ in
-                                gridItems
-                            }
-                        }
-                    }
-                }
-                .offset(y: offsetVertical)
-                .offset(x: offsetHorizontal < safeArea ? offsetHorizontal : safeArea)
+                horizontalGridItems
+                    .offset(y: offsetVertical)
+                    .offset(x: score.offset)
             }
-            .scrollDisabled(false)
+            .scrollDisabled(true)
             .scrollIndicators(.never)
             .ignoresSafeArea()
             .task {
@@ -60,7 +64,6 @@ struct ArtefactsWall: View {
 }
 
 #Preview {
-    ArtefactsWall(offsetHorizontal: .constant(0), runnerPoint: .constant(CGRect(x: 60, y: 260, width: 100, height: 100)))
-        .environmentObject(Router())
+    ArtefactsWall()
         .environmentObject(Score())
 }

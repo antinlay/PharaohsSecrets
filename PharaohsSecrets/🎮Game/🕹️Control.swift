@@ -7,24 +7,10 @@
 
 import SwiftUI
 
-enum Direction {
-    case left
-    case right
-    
-    var value: Bool {
-        switch self {
-        case .left:
-            false
-        case .right:
-            true
-        }
-    }
-}
-
 struct Control: View {
+    @EnvironmentObject var score: Score
+    
     @Binding var isPressingState: Bool
-    @Binding var offset: Double
-    @Binding var direction: Direction
     
     @State private var timer: Timer?
     @State private var velocity: Double = 0
@@ -42,15 +28,15 @@ struct Control: View {
             if isPressing {
                 switch toDirection {
                 case .left:
-                    if offset <= start {
-                        offset += velocity
+                    if score.offset <= start {
+                        score.offset += velocity
                     }
-                    direction = toDirection
+                    score.direction = toDirection
                 case .right:
-                    if offset >= end {
-                        offset -= velocity
+                    if score.offset >= end {
+                        score.offset -= velocity
                     }
-                    direction = toDirection
+                    score.direction = toDirection
                 }
             }
         }
@@ -101,5 +87,5 @@ struct Control: View {
 }
 
 #Preview {
-    Control(isPressingState: .constant(false), offset: .constant(0), direction: .constant(.right))
+    Control(isPressingState: .constant(false))
 }

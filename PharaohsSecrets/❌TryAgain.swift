@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TryAgain: View {
+    @EnvironmentObject var router: Router
+    @EnvironmentObject var score: Score
     
     var body: some View {
         ZStack {
@@ -23,11 +25,12 @@ struct TryAgain: View {
                     .foregroundStyle(.white)
                 Image(.TryAgain.restart)
                     .onTapGesture {
-                        // Заново
+                        score.restart()
+                        router.navigate(to: .game)
                     }
                 Image(.TryAgain.main)
                     .onTapGesture {
-                        // Главное меню
+                        router.navigate(to: .menu)
                     }
             }
         }
@@ -36,4 +39,5 @@ struct TryAgain: View {
 
 #Preview {
     TryAgain()
+        .environmentObject(Router())
 }

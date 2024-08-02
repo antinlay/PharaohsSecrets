@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Menu: View {
     @EnvironmentObject var router: Router
+    @EnvironmentObject var score: Score
+
     private var pharaohe: some View {
         Image(.Menu.pharaohe)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
@@ -21,7 +23,12 @@ struct Menu: View {
             Image(.Menu.splash)
             Image(.Menu.startButton)
                 .onTapGesture {
-                    router.navigate(to: .game)
+                    print(score.isFirstLaunch)
+                    if score.isFirstLaunch {
+                        router.navigate(to: .histories)
+                    } else {
+                        router.navigate(to: .game)
+                    }
                 }
             Image(.Menu.treasuryButton)
                 .onTapGesture {

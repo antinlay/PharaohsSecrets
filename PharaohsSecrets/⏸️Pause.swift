@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct Pause: View {
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var router: Router
+    @EnvironmentObject var score: Score
     
     private var pauseContent: some View {
         VStack(spacing: 0) {
@@ -18,11 +20,12 @@ struct Pause: View {
                 .padding(.bottom, 10)
             Image(.Pause.restart)
                 .onTapGesture {
-                    router.navigate(to: .menu)
+                    score.restart()
+                    dismiss()
                 }
             Image(.Pause.continue)
                 .onTapGesture {
-                    router.navigate(to: .game)
+                    dismiss()
                 }
         }
     }
@@ -34,6 +37,16 @@ struct Pause: View {
                 .padding(.top)
             pauseContent
         }
+    }
+}
+
+extension Score {
+    func restart() {
+        offset = 0
+        direction = .right
+        runnerPoint = CGRect()
+        itemScore = ItemScore()
+        treasury = Array(repeating: TreasureItem(), count: 3 * 10)
     }
 }
 
