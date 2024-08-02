@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Pause: View {
+    @EnvironmentObject var router: Router
+    
     private var pauseContent: some View {
         VStack(spacing: 0) {
             Text("Pause")
@@ -16,11 +18,11 @@ struct Pause: View {
                 .padding(.bottom, 10)
             Image(.Pause.restart)
                 .onTapGesture {
-                    // Заново начать игру
+                    router.navigate(to: .menu)
                 }
             Image(.Pause.continue)
                 .onTapGesture {
-                    // Продолжить игру
+                    router.navigate(to: .game)
                 }
         }
     }
@@ -37,4 +39,6 @@ struct Pause: View {
 
 #Preview {
     Pause()
+        .environmentObject(Score())
+        .environmentObject(Router())
 }

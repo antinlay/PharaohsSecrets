@@ -1,5 +1,5 @@
 //
-//  🟧TreasuryCell.swift
+//  🟧TreasureCell.swift
 //  PharaohsSecrets
 //
 //  Created by Janiece Eleonour on 28.07.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum CellImage: CaseIterable {
+enum TreasureImages: CaseIterable {
     case almaz, bomb, empty, hryst, pendant, ring, sansara, triada
     
     var value: ImageResource {
@@ -32,11 +32,14 @@ enum CellImage: CaseIterable {
     }
 }
 
-struct TreasuryCell: View {
+struct TreasureCell: View {
+    @EnvironmentObject var score: Score
+    
     @Binding var runnerPoint: CGRect
-    @State var randomBox = CellImage.allCases.randomElement() ?? .empty
+    @State var randomBox = TreasureImages.allCases.randomElement() ?? .empty
     var index: Int
     @State var printTap = ""
+    @State private var lastFrame: CGRect = .zero
     
     var body: some View {
         GeometryReader { geometry in
@@ -50,6 +53,32 @@ struct TreasuryCell: View {
             }
             .onChange(of: geometry.frame(in: .global)) { newValue in
                 if newValue.intersects(runnerPoint) {
+                    switch randomBox {
+                    case .bomb:
+                        score.itemScore.lives -= 1
+                    case .sansara:
+                        score.itemScore.keys = true
+                    case .ring:
+                        score.itemScore.lives += 1
+                    case .triada:
+                        score.itemScore.coins += 1
+                    case .almaz:
+                        score.itemScore.weapons = true
+                    case .pendant:
+                        if score.itemScore.weapons {
+                            score.itemScore.weapons = false
+                        } else if score.itemScore.keys {
+                            score.itemScore.keys = false
+                        } else {
+                            score.itemScore.lives -= 1
+                        }
+                    case .hryst:
+                        score.itemScore.lives -= 1
+                    case .empty:
+                        return
+                    }
+                    if randomBox == .bomb {
+                    }
                     randomBox = .empty
                 }
             }
@@ -58,5 +87,6 @@ struct TreasuryCell: View {
 }
 
 #Preview {
-    TreasuryCell(runnerPoint: .constant(CGRect(x: 110, y: 110, width: 10, height: 10)), index: 1)
+    TreasureCell(runnerPoint: .constant(CGRect(x: 110, y: 110, width: 10, height: 10)), index: 1)
+        .environmentObject(Score())
 }

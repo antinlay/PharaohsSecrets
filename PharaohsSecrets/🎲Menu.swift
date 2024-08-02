@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Menu: View {
+    @EnvironmentObject var router: Router
     private var pharaohe: some View {
         Image(.Menu.pharaohe)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
@@ -19,7 +20,14 @@ struct Menu: View {
         VStack {
             Image(.Menu.splash)
             Image(.Menu.startButton)
+                .onTapGesture {
+                    router.navigate(to: .game)
+                }
             Image(.Menu.treasuryButton)
+                .onTapGesture {
+                    router.navigate(to: .treasury)
+                }
+
         }
         .padding(.top, 44)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
@@ -36,4 +44,6 @@ struct Menu: View {
 
 #Preview {
     Menu()
+        .environmentObject(Router())
+        .environmentObject(Score())
 }

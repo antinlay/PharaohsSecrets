@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct PharaohsSecretsApp: App {
+    @StateObject var router = Router()
+    @StateObject var score = Score()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(router)
+                .environmentObject(score)
         }
     }
 }

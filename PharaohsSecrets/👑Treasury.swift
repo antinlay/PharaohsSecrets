@@ -7,30 +7,30 @@
 
 import SwiftUI
 
-struct TreasuryItem: Hashable {
+struct TreasureItem: Hashable {
     var items: [ImageResource] = [.Treasury.eagle, .Treasury.jugs, .Treasury.mummy, .Treasury.pharaoh, .Treasury.pyramids, .Treasury.upout]
     var placeholder: ImageResource = .TreasuryView.placeholder
-    var item: ImageResource
+    var value: ImageResource
     
     var isOpen: Bool = false {
         didSet {
             if isOpen && !oldValue {
-                self.item = self.items.randomElement() ?? .Treasury.upout
+                self.value = self.items.randomElement() ?? .Treasury.upout
             }
         }
     }
     
     var isPlaceHolder: Bool {
-        item == placeholder
+        value == placeholder
     }
     
     init() {
-        self.item = self.placeholder
+        self.value = self.placeholder
     }
 }
 
-struct TreasuryItemView: View {
-    @Binding var item: TreasuryItem
+struct TreasureItemView: View {
+    @Binding var item: TreasureItem
     
     var body: some View {
         ZStack {
@@ -38,12 +38,12 @@ struct TreasuryItemView: View {
                 .fill(Color.randomTreasuryGradient)
                 .blur(radius: 10)
                 .frame(width: 65)
-            Image(item.item)
-                .onTapGesture {
-                    withAnimation {
-                        item.isOpen = true
-                    }
-                }
+            Image(item.value)
+//                .onChange(of: item.isOpen) { newValue in
+//                    withAnimation {
+//                        item.isOpen = true
+//                    }
+//                }
         }
         .animation(.bouncy(duration: 1), value: item.isOpen)
         .frame(width: 97, height: 94)
@@ -51,7 +51,8 @@ struct TreasuryItemView: View {
 }
 
 struct Treasury: View {
-    @State private var treasury: [TreasuryItem] = Array(repeating: TreasuryItem(), count: 3 * 10)
+    @EnvironmentObject var router: Router
+    @EnvironmentObject var score: Score
     
     @State private var selectedTab = 0
     
@@ -70,10 +71,10 @@ struct Treasury: View {
         .padding()
     }
     
-    private func horizontalGrid(_ range: Range<Int>, _ treasury: Binding<[TreasuryItem]>) -> some View {
+    private func horizontalGrid(_ range: Range<Int>, _ treasury: Binding<[TreasureItem]>) -> some View {
         LazyHGrid(rows: [GridItem(.fixed(100)), GridItem(.fixed(100))], spacing: 14) {
             ForEach(range, id: \.self) { index in
-                TreasuryItemView(item: $treasury[index])
+                TreasureItemView(item: $score.treasury[index])
             }
         }
     }
@@ -92,7 +93,7 @@ struct Treasury: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             .padding(.top, 40)
             .onTapGesture {
-                // Назад
+                router.navigate(to: .menu)
             }
     }
     
@@ -106,12 +107,12 @@ struct Treasury: View {
                 title
                 
                 TabView(selection: $selectedTab) {
-                    horizontalGrid(0..<10, $treasury).tag(0)
-                    horizontalGrid(10..<20, $treasury).tag(1)
-                    horizontalGrid(20..<30, $treasury).tag(2)
+                    horizontalGrid(0..<10, $score.treasury).tag(0)
+                    horizontalGrid(10..<20, $score.treasury).tag(1)
+                    horizontalGrid(20..<30, $score.treasury).tag(2)
                 }
+                .frame(height: 210)
                 .ignoresSafeArea()
-                .frame(width: .infinity, height: 210)
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 
                 indexTabView
@@ -122,4 +123,6 @@ struct Treasury: View {
 
 #Preview {
     Treasury()
+        .environmentObject(Router())
+        .environmentObject(Score())
 }

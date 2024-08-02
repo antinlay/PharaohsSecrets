@@ -14,7 +14,9 @@ enum WallPoints: Double {
 }
 
 struct Game: View {
-    @Binding var score: Int
+    @EnvironmentObject var router: Router
+    @EnvironmentObject var score: Score
+    
     @State var runnerPoint = CGRect()
     @State var direction: Direction = .right
     
@@ -44,7 +46,7 @@ struct Game: View {
     private var scoreboard: some View {
         Image(.Game.scoreboard)
             .overlay {
-                Text("\(Int(offset))")
+                Text("\(score.itemScore.coins)")
                     .font(.cabin(.bold, size: 31))
                     .foregroundStyle(.score)
             }
@@ -64,7 +66,7 @@ struct Game: View {
         Image(.Game.pause)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
             .onTapGesture {
-                //
+                router.navigate(to: .pause)
             }
     }
     
@@ -131,5 +133,7 @@ struct Game: View {
 }
 
 #Preview {
-    Game(score: .constant(122))
+    Game()
+        .environmentObject(Score())
+        .environmentObject(Router())
 }

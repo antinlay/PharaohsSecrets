@@ -13,7 +13,6 @@
 		5C20BCF72C46ED3B00612E1E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C20BCF62C46ED3B00612E1E /* Preview Assets.xcassets */; };
 		5C20BCFE2C46F2E100612E1E /* ⚙️Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20BCFD2C46F2E100612E1E /* ⚙️Loading.swift */; };
 		5C20BD002C4715B400612E1E /* 🎲Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20BCFF2C4715B400612E1E /* 🎲Menu.swift */; };
-		5C20BD022C471BF400612E1E /* ↺Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20BD012C471BF400612E1E /* ↺Coordinator.swift */; };
 		5C20BD042C47C78A00612E1E /* 📰Histories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20BD032C47C78A00612E1E /* 📰Histories.swift */; };
 		5C20BD062C47CD7500612E1E /* 🧩Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20BD052C47CD7500612E1E /* 🧩Fonts.swift */; };
 		5CD2E4842C4EB3DA002E26B5 /* 🏆History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2E4832C4EB3DA002E26B5 /* 🏆History.swift */; };
@@ -31,13 +30,15 @@
 		5CDC5D192C487184000C31BB /* 🧩FullScreenBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC5D182C487184000C31BB /* 🧩FullScreenBackground.swift */; };
 		5CDCCC5B2C502C300054344E /* 🔁NotDiscovered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCCC5A2C502C300054344E /* 🔁NotDiscovered.swift */; };
 		5CDCCC5F2C5046F40054344E /* 🎮Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCCC5E2C5046F40054344E /* 🎮Game.swift */; };
-		5CDCCC612C51214B0054344E /* ➡️ScrollOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCCC602C51214B0054344E /* ➡️ScrollOffset.swift */; };
 		5CDCCC6E2C51A89B0054344E /* 🏃🏽‍♂️‍➡️Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCCC6D2C51A89B0054344E /* 🏃🏽‍♂️‍➡️Runner.swift */; };
 		5CDCCC702C527CE30054344E /* 🕹️Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCCC6F2C527CE30054344E /* 🕹️Control.swift */; };
 		5CDCCC722C52A5F20054344E /* 🏜️Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCCC712C52A5F20054344E /* 🏜️Ground.swift */; };
 		5CDCCC742C52A8470054344E /* 💣TreasuryWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCCC732C52A8470054344E /* 💣TreasuryWall.swift */; };
 		5CF1ED842C55C78A001FF530 /* 🟧TreasuryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF1ED832C55C78A001FF530 /* 🟧TreasuryCell.swift */; };
 		5CF672132C5AA6FD0015C64E /* 🚥TreasuryStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF672122C5AA6FD0015C64E /* 🚥TreasuryStop.swift */; };
+		5CF672152C5CFB820015C64E /* 🧮Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF672142C5CFB820015C64E /* 🧮Score.swift */; };
+		5CF672172C5CFDEA0015C64E /* 🔀Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF672162C5CFDEA0015C64E /* 🔀Router.swift */; };
+		5CF672192C5D03B30015C64E /* 🎁NewTreasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF672182C5D03B30015C64E /* 🎁NewTreasure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +49,6 @@
 		5C20BCF62C46ED3B00612E1E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C20BCFD2C46F2E100612E1E /* ⚙️Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "⚙️Loading.swift"; sourceTree = "<group>"; };
 		5C20BCFF2C4715B400612E1E /* 🎲Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎲Menu.swift"; sourceTree = "<group>"; };
-		5C20BD012C471BF400612E1E /* ↺Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "↺Coordinator.swift"; sourceTree = "<group>"; };
 		5C20BD032C47C78A00612E1E /* 📰Histories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📰Histories.swift"; sourceTree = "<group>"; };
 		5C20BD052C47CD7500612E1E /* 🧩Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🧩Fonts.swift"; sourceTree = "<group>"; };
 		5CD2E4832C4EB3DA002E26B5 /* 🏆History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🏆History.swift"; sourceTree = "<group>"; };
@@ -67,13 +67,15 @@
 		5CDC5D182C487184000C31BB /* 🧩FullScreenBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🧩FullScreenBackground.swift"; sourceTree = "<group>"; };
 		5CDCCC5A2C502C300054344E /* 🔁NotDiscovered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔁NotDiscovered.swift"; sourceTree = "<group>"; };
 		5CDCCC5E2C5046F40054344E /* 🎮Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎮Game.swift"; sourceTree = "<group>"; };
-		5CDCCC602C51214B0054344E /* ➡️ScrollOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "➡️ScrollOffset.swift"; sourceTree = "<group>"; };
 		5CDCCC6D2C51A89B0054344E /* 🏃🏽‍♂️‍➡️Runner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🏃🏽‍♂️‍➡️Runner.swift"; sourceTree = "<group>"; };
 		5CDCCC6F2C527CE30054344E /* 🕹️Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🕹️Control.swift"; sourceTree = "<group>"; };
 		5CDCCC712C52A5F20054344E /* 🏜️Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🏜️Ground.swift"; sourceTree = "<group>"; };
 		5CDCCC732C52A8470054344E /* 💣TreasuryWall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "💣TreasuryWall.swift"; sourceTree = "<group>"; };
 		5CF1ED832C55C78A001FF530 /* 🟧TreasuryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🟧TreasuryCell.swift"; sourceTree = "<group>"; };
 		5CF672122C5AA6FD0015C64E /* 🚥TreasuryStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🚥TreasuryStop.swift"; sourceTree = "<group>"; };
+		5CF672142C5CFB820015C64E /* 🧮Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🧮Score.swift"; sourceTree = "<group>"; };
+		5CF672162C5CFDEA0015C64E /* 🔀Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🔀Router.swift"; sourceTree = "<group>"; };
+		5CF672182C5D03B30015C64E /* 🎁NewTreasure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎁NewTreasure.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +113,6 @@
 				5C20BCEF2C46ED3A00612E1E /* PharaohsSecretsApp.swift */,
 				5C20BCF12C46ED3A00612E1E /* ContentView.swift */,
 				5C20BCFF2C4715B400612E1E /* 🎲Menu.swift */,
-				5C20BD012C471BF400612E1E /* ↺Coordinator.swift */,
-				5CDCCC602C51214B0054344E /* ➡️ScrollOffset.swift */,
 				5C20BCFD2C46F2E100612E1E /* ⚙️Loading.swift */,
 				5C20BD032C47C78A00612E1E /* 📰Histories.swift */,
 				5CD2E4832C4EB3DA002E26B5 /* 🏆History.swift */,
@@ -120,6 +120,9 @@
 				5CD2E48E2C4EC8D1002E26B5 /* ❌TryAgain.swift */,
 				5CD2E4942C4ED628002E26B5 /* 🥇YouWin.swift */,
 				5CD2E4962C4EF699002E26B5 /* 👑Treasury.swift */,
+				5CF672142C5CFB820015C64E /* 🧮Score.swift */,
+				5CF672182C5D03B30015C64E /* 🎁NewTreasure.swift */,
+				5CF672162C5CFDEA0015C64E /* 🔀Router.swift */,
 				5CDCCC5A2C502C300054344E /* 🔁NotDiscovered.swift */,
 				5CDCCC6C2C51A8300054344E /* 🎮Game */,
 				5C20BD052C47CD7500612E1E /* 🧩Fonts.swift */,
@@ -278,20 +281,21 @@
 			files = (
 				5C20BCF22C46ED3A00612E1E /* ContentView.swift in Sources */,
 				5CDCCC5F2C5046F40054344E /* 🎮Game.swift in Sources */,
+				5CF672152C5CFB820015C64E /* 🧮Score.swift in Sources */,
 				5C20BD062C47CD7500612E1E /* 🧩Fonts.swift in Sources */,
+				5CF672172C5CFDEA0015C64E /* 🔀Router.swift in Sources */,
 				5C20BCFE2C46F2E100612E1E /* ⚙️Loading.swift in Sources */,
 				5C20BD042C47C78A00612E1E /* 📰Histories.swift in Sources */,
 				5CDCCC742C52A8470054344E /* 💣TreasuryWall.swift in Sources */,
 				5CDC5D132C48072C000C31BB /* 💍Adventure.swift in Sources */,
 				5C20BD002C4715B400612E1E /* 🎲Menu.swift in Sources */,
+				5CF672192C5D03B30015C64E /* 🎁NewTreasure.swift in Sources */,
 				5CD2E48F2C4EC8D1002E26B5 /* ❌TryAgain.swift in Sources */,
-				5CDCCC612C51214B0054344E /* ➡️ScrollOffset.swift in Sources */,
 				5C20BCF02C46ED3A00612E1E /* PharaohsSecretsApp.swift in Sources */,
 				5CDCCC6E2C51A89B0054344E /* 🏃🏽‍♂️‍➡️Runner.swift in Sources */,
 				5CD2E4972C4EF699002E26B5 /* 👑Treasury.swift in Sources */,
 				5CDCCC702C527CE30054344E /* 🕹️Control.swift in Sources */,
 				5CD2E4862C4EB8EB002E26B5 /* ☠️History.swift in Sources */,
-				5C20BD022C471BF400612E1E /* ↺Coordinator.swift in Sources */,
 				5CDC5D192C487184000C31BB /* 🧩FullScreenBackground.swift in Sources */,
 				5CF672132C5AA6FD0015C64E /* 🚥TreasuryStop.swift in Sources */,
 				5CF1ED842C55C78A001FF530 /* 🟧TreasuryCell.swift in Sources */,

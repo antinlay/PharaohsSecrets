@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Loading: View {
+    @EnvironmentObject var router: Router
+    
     private var splash: some View {
         Image(.Loading.splash)
             .frame(height: 170)
@@ -18,9 +20,16 @@ struct Loading: View {
             fullScreenBackground(.Loading.background)
             splash
         }
+        .onAppear {
+            // Симулируем загрузку данных
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                router.navigate(to: .menu)
+            }
+        }
     }
 }
 
 #Preview {
     Loading()
+        .environmentObject(Router())
 }

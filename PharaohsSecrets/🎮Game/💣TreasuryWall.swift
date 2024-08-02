@@ -11,14 +11,14 @@ struct TreasuryWall: View {
     @Binding var offsetHorizontal: Double
     @Binding var runnerPoint: CGRect
     @State private var offsetVertical: Double = 0
-    @State private var randomBoxes: [TreasuryCell] = []
+    @State private var randomBoxes: [TreasureCell] = []
     @State private var coordinate = CGRect()
     @State private var timer: Timer?
     
     private var gridItems: some View {
         LazyVGrid(columns: [GridItem(.fixed(100)), GridItem(.fixed(100)), GridItem(.fixed(100))], spacing: 10) {
             ForEach(1..<10, id: \.self) { index in
-                TreasuryCell(runnerPoint: $runnerPoint, index: index)
+                TreasureCell(runnerPoint: $runnerPoint, index: index)
                     .frame(width: 100, height: 100)
             }
         }
@@ -58,5 +58,5 @@ struct TreasuryWall: View {
 }
 
 #Preview {
-    TreasuryWall(offsetHorizontal: .constant(0), runnerPoint: .constant(CGRect(x: 60, y: 60, width: 100, height: 100)))
+    TreasuryWall(offsetHorizontal: .constant(0), runnerPoint: .constant(CGRect(x: 60, y: 260, width: 100, height: 100)))
 }

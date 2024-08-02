@@ -8,11 +8,46 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var router: Router
+    @EnvironmentObject var score: Score
+    
     var body: some View {
-        Game(score: .constant(122))
+        Group {
+            switch router.currentView {
+            case .loading:
+                Loading()
+            case .menu:
+                Menu()
+            case .adventure:
+                Adventure()
+            case .treasury:
+                Treasury()
+            case .newTreasure:
+                NewTreasure()
+            case .histories:
+                Histories()
+            case .game:
+                Game()
+            case .youWin:
+                YouWin()
+            case .tryAgain:
+                TryAgain()
+            case .winHistory:
+                WinHistory()
+            case .diedHistory:
+                DiedHistory()
+            case .notDiscovered:
+                NotDiscovered()
+            case .pause:
+                Pause()
+            }
+        }
+        .animation(.default, value: router.currentView)
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(Router())
+        .environmentObject(Score())
 }
