@@ -81,6 +81,11 @@ struct Game: View {
             .offset(x: score.offset <= -4600 ? 0 : UIScreen.main.bounds.width)
             .opacity(score.offset <= -4600 ? 1 : .zero)
             .animation(.easeInOut(duration: 1.0), value: score.offset)
+            .onChange(of: score.offset) { newValue in
+                if newValue == -4600 {
+                    score.disableControl = true
+                }
+            }
     }
     
     private var jumpButton: some View {
@@ -96,6 +101,11 @@ struct Game: View {
             .offset(x: score.offset <= -5300 ? 0 : UIScreen.main.bounds.width)
             .opacity(score.offset <= -5300 ? 1 : .zero)
             .animation(.easeInOut(duration: 1.0), value: score.offset)
+            .onChange(of: score.offset) { newValue in
+                if newValue == -5300 {
+                    score.disableControl = true
+                }
+            }
     }
     
     var body: some View {

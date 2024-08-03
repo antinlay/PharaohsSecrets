@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct NewTreasure: View {
-    @State var treasureItem = TreasureItem()
+    @Environment(\.dismiss) var dismiss
+    @Binding var treasureItem: TreasureItem
     
     var body: some View {
         ZStack {
+            fullScreenBackground(.Histories.background)
+            Image(.NewTreasure.lights)
             Image(.NewTreasure.particles)
             Image(.Pause.tablo)
             VStack {
@@ -22,13 +25,16 @@ struct NewTreasure: View {
                 .font(.cabin(.medium, size: 22))
                 .foregroundStyle(.accent)
                 .multilineTextAlignment(.center)
-                TreasureItemView(item: .constant(TreasureItem()))
+                TreasureItemView(item: $treasureItem)
                 Image(.Pause.continue)
+                    .onTapGesture {
+                        dismiss()
+                    }
             }
         }
     }
 }
 
 #Preview {
-    NewTreasure()
+    NewTreasure(treasureItem: .constant(TreasureItem()))
 }

@@ -24,6 +24,10 @@ struct TreasureItem: Hashable {
         value == placeholder
     }
     
+    mutating func toogleIsOpen() {
+        self.isOpen.toggle()
+    }
+    
     init() {
         self.value = self.placeholder
     }
@@ -39,11 +43,6 @@ struct TreasureItemView: View {
                 .blur(radius: 10)
                 .frame(width: 65)
             Image(item.value)
-//                .onChange(of: item.isOpen) { newValue in
-//                    withAnimation {
-//                        item.isOpen = true
-//                    }
-//                }
         }
         .animation(.bouncy(duration: 1), value: item.isOpen)
         .frame(width: 97, height: 94)

@@ -46,7 +46,6 @@ extension Score {
         direction = .right
         runnerPoint = CGRect()
         itemScore = ItemScore()
-        treasury = Array(repeating: TreasureItem(), count: 3 * 10)
     }
 }
 

@@ -11,9 +11,11 @@ class Score: ObservableObject {
     @Published var offset: Double = 0
     @Published var direction: Direction = .right
     @Published var runnerPoint = CGRect()
+    @Published var disableControl: Bool = false
+    
     @Published var itemScore = ItemScore()
     @Published var treasury: [TreasureItem] = Array(repeating: TreasureItem(), count: 3 * 10)
-    @Published var isFirstLaunch: Bool = UserDefaults.standard.bool(forKey: "isFirstLaunch")
+    var isFirstLaunch: Bool = UserDefaults.standard.bool(forKey: "isFirstLaunch")
 }
 
 enum Direction {

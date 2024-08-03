@@ -22,8 +22,8 @@ struct ContentView: View {
                 Adventure()
             case .treasury:
                 Treasury()
-            case .newTreasure:
-                NewTreasure()
+//            case .newTreasure:
+//                NewTreasure()
             case .histories:
                 Histories()
             case .game:

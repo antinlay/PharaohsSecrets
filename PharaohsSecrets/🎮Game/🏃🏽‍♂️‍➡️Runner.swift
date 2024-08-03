@@ -57,7 +57,7 @@ struct Runner: View {
     }
 
     var body: some View {
-        Image(moveImage.personImage)
+        Image(score.disableControl ? .Game.stay : moveImage.personImage)
             .scaleEffect(x: score.direction.value ? 1 : -1)
             .onAppear {
                 if isPressing {
@@ -79,4 +79,5 @@ struct Runner: View {
 
 #Preview {
     Runner(isPressing: .constant(true))
+        .environmentObject(Score())
 }

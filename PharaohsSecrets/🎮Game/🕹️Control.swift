@@ -58,22 +58,26 @@ struct Control: View {
     private var control: some View {
         HStack {
             Image(.Game.control)
+                .opacity(score.disableControl ? 0.5 : 1)
                 .gesture(
                     continuePressGesture
                         .onChanged { _ in
                             run(.left)
                         }
                 )
+                .disabled(score.disableControl)
                 .padding(.leading)
             Spacer()
             Image(.Game.control)
                 .rotationEffect(Angle(degrees: 180))
+                .opacity(score.disableControl ? 0.5 : 1)
                 .gesture(
                     continuePressGesture
                         .onChanged { _ in
                             run(.right)
                         }
                 )
+                .disabled(score.disableControl)
                 .padding(.trailing)
         }
     }
@@ -88,4 +92,5 @@ struct Control: View {
 
 #Preview {
     Control(isPressingState: .constant(false))
+        .environmentObject(Score())
 }

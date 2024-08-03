@@ -12,7 +12,7 @@ enum GameViews {
     case menu
     case adventure
     case treasury
-    case newTreasure
+//    case newTreasure
     
     case histories
     case game
