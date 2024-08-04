@@ -30,4 +30,5 @@ struct Ground: View {
 
 #Preview {
     Ground()
+        .environmentObject(Score())
 }

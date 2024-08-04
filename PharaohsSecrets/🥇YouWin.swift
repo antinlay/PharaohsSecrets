@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct YouWin: View {
-    @State private var treasure: ImageResource = .Treasury.triada
-    @State private var points: Int = 122
+    @EnvironmentObject var router: Router
+    @EnvironmentObject var score: Score
     
     var body: some View {
         ZStack {
@@ -27,17 +27,19 @@ struct YouWin: View {
                 .overlay(alignment: .bottom) {
                     VStack {
                         HStack {
-                            Text("\(points)")
+                            Text("\(score.itemScore.coins)")
                                 .font(.cabin(.bold, size: 63))
                                 .foregroundStyle(.darkAccent)
-                            Image(treasure)
+                            Image(.Treasury.triada)
                                 .padding()
                         }
                         Text("You discovered new treasures!")
                             .font(.cabin(.bold, size: 19))
                             .foregroundStyle(.darkAccent)
                         Image(.YouWin.treasuryButton)
-
+                            .onTapGesture {
+                                router.navigate(to: .treasury)
+                            }
                     }
                 }
         }
@@ -46,4 +48,6 @@ struct YouWin: View {
 
 #Preview {
     YouWin()
+        .environmentObject(Score())
+        .environmentObject(Router())
 }

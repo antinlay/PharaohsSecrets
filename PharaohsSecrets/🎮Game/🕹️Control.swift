@@ -19,7 +19,7 @@ struct Control: View {
     
     private let start: Double = 0
     private let end: Double = -5538
-    private let speed: Double = 2 // Скорость перемещения
+    private let speed: Double = 3 // Скорость перемещения
     
     private func run(_ toDirection: Direction) {
         timer?.invalidate()
@@ -43,7 +43,7 @@ struct Control: View {
     }
     
     private var continuePressGesture: GestureStateGesture<SequenceGesture<LongPressGesture, LongPressGesture>, Bool> {
-        LongPressGesture(minimumDuration: 0.1)
+        LongPressGesture(minimumDuration: 0.05)
             .sequenced(before: LongPressGesture(minimumDuration: .infinity))
             .updating($isPressing) { value, state, transaction in
                 switch value {

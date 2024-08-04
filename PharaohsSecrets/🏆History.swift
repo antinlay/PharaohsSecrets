@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct WinHistory: View {
+    @EnvironmentObject var router: Router
+    @EnvironmentObject var score: Score
+
     private var histories: [String] = [
                             """
                             I managed to go through part of the maze and find
@@ -44,7 +47,11 @@ struct WinHistory: View {
             .foregroundStyle(.white)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .centerLastTextBaseline)
             .onTapGesture {
-                // Переход на другое представление
+                if score.newTresury != nil {
+                    router.navigate(to: .youWin)
+                } else {
+                    router.navigate(to: .notDiscovered)
+                }
             }
     }
     
@@ -63,4 +70,6 @@ struct WinHistory: View {
 
 #Preview {
     WinHistory()
+        .environmentObject(Router())
+        .environmentObject(Score())
 }

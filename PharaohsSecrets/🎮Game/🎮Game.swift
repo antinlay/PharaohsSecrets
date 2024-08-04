@@ -18,26 +18,26 @@ struct Game: View {
     @EnvironmentObject var score: Score
     
     @State var isPressing: Bool = false
-    @State var startGame: Bool = false
     @State var isPause: Bool = false
-    
-    private var startText: some View {
-        Text("START!")
-            .opacity(startGame ? .zero : 1)
-            .font(.leagueGothic(.regular, size: 123))
-            .foregroundStyle(Color.actionGradient)
-    }
-    
+        
     private var tapToContinue: some View {
-        Text("Tap to continue")
-            .font(.cabin(.bold, size: 19))
-            .foregroundStyle(.white)
-            .opacity(startGame ? .zero : 1)
-            .onTapGesture {
-                withAnimation {
-                    startGame = true
-                }
+        VStack {
+            Text("START!")
+                .font(.leagueGothic(.regular, size: 123))
+                .foregroundStyle(Color.actionGradient)
+                .padding(.top, 50)
+            Text("Tap to continue")
+                .font(.cabin(.bold, size: 19))
+                .foregroundStyle(.white)
+        }
+        .opacity(score.startGame ? .zero : 1)
+        .onTapGesture {
+            withAnimation {
+                score.startGame = true
             }
+            score.disableControl = false
+        }
+
     }
     
     private var scoreboard: some View {
@@ -60,6 +60,7 @@ struct Game: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .onChange(of: score.itemScore.lives) { newValue in
             if newValue == 0 {
+                score.restart()
                 router.navigate(to: .diedHistory)
             }
         }
@@ -82,30 +83,46 @@ struct Game: View {
             .opacity(score.offset <= -4600 ? 1 : .zero)
             .animation(.easeInOut(duration: 1.0), value: score.offset)
             .onChange(of: score.offset) { newValue in
-                if newValue == -4600 {
+                if newValue == -4602 {
                     score.disableControl = true
                 }
             }
     }
     
     private var jumpButton: some View {
-        Image(.Game.redButton)
-            .overlay {
-                Text("JUMP")
-                    .font(.cabin(.medium, size: 15))
-                    .foregroundStyle(.white)
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
-            .padding(.trailing, 100)
-            .padding(.top, 50)
-            .offset(x: score.offset <= -5300 ? 0 : UIScreen.main.bounds.width)
-            .opacity(score.offset <= -5300 ? 1 : .zero)
-            .animation(.easeInOut(duration: 1.0), value: score.offset)
-            .onChange(of: score.offset) { newValue in
-                if newValue == -5300 {
-                    score.disableControl = true
+        ZStack {
+            Text("""
+            There seems to be something sparkling at
+            the bottom.. I'll have to jump! I hope the
+            parachute will help..
+            """)
+            .font(.cabin(.bold, size: 19))
+            .foregroundStyle(.white)
+            .multilineTextAlignment(.center)
+            .frame(maxHeight: .infinity, alignment: .top)
+            .padding(.top, 100)
+            
+            Image(.Game.redButton)
+                .overlay {
+                    Text("JUMP")
+                        .font(.cabin(.medium, size: 15))
+                        .foregroundStyle(.white)
                 }
+                .onTapGesture {
+                    router.navigate(to: .parachute)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
+                .padding(.trailing, 100)
+                .padding(.top, 50)
+        }
+        .offset(x: score.offset <= -5300 ? 0 : UIScreen.main.bounds.width)
+        .opacity(score.offset <= -5300 ? 1 : .zero)
+        .animation(.easeInOut(duration: 1.0), value: score.offset)
+        .onChange(of: score.offset) { newValue in
+            if newValue == -5301 {
+                score.disableControl = true
             }
+        }
     }
     
     var body: some View {
@@ -136,11 +153,7 @@ struct Game: View {
             life
                 .padding(.top, 30)
             Control(isPressingState: $isPressing)
-            VStack {
-                startText
-                    .padding(.top, 50)
-                tapToContinue
-            }
+            tapToContinue
         }
     }
 }

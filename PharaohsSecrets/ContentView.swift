@@ -22,8 +22,8 @@ struct ContentView: View {
                 Adventure()
             case .treasury:
                 Treasury()
-//            case .newTreasure:
-//                NewTreasure()
+            case .parachute:
+                Parachute()
             case .histories:
                 Histories()
             case .game:
@@ -40,6 +40,8 @@ struct ContentView: View {
                 NotDiscovered()
             case .pause:
                 Pause()
+            case .crashed:
+                Crashed()
             }
         }
         .animation(.default, value: router.currentView)

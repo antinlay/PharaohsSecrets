@@ -57,11 +57,15 @@ struct TreasuryStop: View {
                             if !isTreasurySelected {
                                 withAnimation {
                                     selectedTreasury = treasury
+                                    isTreasurySelected = true
                                 }
-                                isTreasurySelected = true
+                                
                                 if let index = score.indexFirstClosedTreasury(), Bool.random() {
                                     score.treasury[index].toogleIsOpen()
-                                    newTresureItem = score.treasury[index]
+                                    score.newTresury = score.treasury[index]
+                                    if let item = score.newTresury {
+                                        newTresureItem = item
+                                    }
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                         withAnimation {
                                             isShowingNewTresure = true
@@ -73,13 +77,14 @@ struct TreasuryStop: View {
                                             Well, let's move on..
                                             """
                                 }
+                                
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                     withAnimation {
                                         isVStackHidden = true
+                                        score.disableControl = false
                                     }
                                 }
                             }
-                            score.disableControl = false
                         }
                 }
             }

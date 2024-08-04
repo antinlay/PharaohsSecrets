@@ -12,7 +12,7 @@ enum GameViews {
     case menu
     case adventure
     case treasury
-//    case newTreasure
+    case parachute
     
     case histories
     case game
@@ -22,6 +22,7 @@ enum GameViews {
     case diedHistory
     case notDiscovered
     case pause
+    case crashed
 }
 
 class Router: ObservableObject {

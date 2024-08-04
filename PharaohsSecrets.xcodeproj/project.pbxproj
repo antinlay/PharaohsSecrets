@@ -15,6 +15,8 @@
 		5C20BD002C4715B400612E1E /* 🎲Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20BCFF2C4715B400612E1E /* 🎲Menu.swift */; };
 		5C20BD042C47C78A00612E1E /* 📰Histories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20BD032C47C78A00612E1E /* 📰Histories.swift */; };
 		5C20BD062C47CD7500612E1E /* 🧩Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20BD052C47CD7500612E1E /* 🧩Fonts.swift */; };
+		5C9235662C5F79370090C16F /* 🪂Parachute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9235652C5F79370090C16F /* 🪂Parachute.swift */; };
+		5C9235682C5F825E0090C16F /* 😵Crashed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9235672C5F825E0090C16F /* 😵Crashed.swift */; };
 		5CD2E4842C4EB3DA002E26B5 /* 🏆History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2E4832C4EB3DA002E26B5 /* 🏆History.swift */; };
 		5CD2E4862C4EB8EB002E26B5 /* ☠️History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2E4852C4EB8EB002E26B5 /* ☠️History.swift */; };
 		5CD2E4882C4EBFDB002E26B5 /* AlumniSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CD2E4872C4EBFDB002E26B5 /* AlumniSans-Medium.otf */; };
@@ -51,6 +53,8 @@
 		5C20BCFF2C4715B400612E1E /* 🎲Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🎲Menu.swift"; sourceTree = "<group>"; };
 		5C20BD032C47C78A00612E1E /* 📰Histories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "📰Histories.swift"; sourceTree = "<group>"; };
 		5C20BD052C47CD7500612E1E /* 🧩Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🧩Fonts.swift"; sourceTree = "<group>"; };
+		5C9235652C5F79370090C16F /* 🪂Parachute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🪂Parachute.swift"; sourceTree = "<group>"; };
+		5C9235672C5F825E0090C16F /* 😵Crashed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "😵Crashed.swift"; sourceTree = "<group>"; };
 		5CD2E4832C4EB3DA002E26B5 /* 🏆History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "🏆History.swift"; sourceTree = "<group>"; };
 		5CD2E4852C4EB8EB002E26B5 /* ☠️History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "☠️History.swift"; sourceTree = "<group>"; };
 		5CD2E4872C4EBFDB002E26B5 /* AlumniSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlumniSans-Medium.otf"; sourceTree = "<group>"; };
@@ -191,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				5CDCCC5E2C5046F40054344E /* 🎮Game.swift */,
+				5C9235652C5F79370090C16F /* 🪂Parachute.swift */,
+				5C9235672C5F825E0090C16F /* 😵Crashed.swift */,
 				5CF672122C5AA6FD0015C64E /* 🚥TreasuryStop.swift */,
 				5CDCCC732C52A8470054344E /* 💣ArtefactsWall.swift */,
 				5CF1ED832C55C78A001FF530 /* 🟧ArtefactCell.swift */,
@@ -281,7 +287,9 @@
 			files = (
 				5C20BCF22C46ED3A00612E1E /* ContentView.swift in Sources */,
 				5CDCCC5F2C5046F40054344E /* 🎮Game.swift in Sources */,
+				5C9235682C5F825E0090C16F /* 😵Crashed.swift in Sources */,
 				5CF672152C5CFB820015C64E /* 🧮Score.swift in Sources */,
+				5C9235662C5F79370090C16F /* 🪂Parachute.swift in Sources */,
 				5C20BD062C47CD7500612E1E /* 🧩Fonts.swift in Sources */,
 				5CF672172C5CFDEA0015C64E /* 🔀Router.swift in Sources */,
 				5C20BCFE2C46F2E100612E1E /* ⚙️Loading.swift in Sources */,

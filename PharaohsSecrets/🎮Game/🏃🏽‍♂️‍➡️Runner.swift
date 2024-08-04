@@ -37,7 +37,7 @@ struct Runner: View {
 
     private func startAnimation() {
         timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.15, repeats: true) { _ in
             switch moveImage {
             case .start:
                 moveImage = .step

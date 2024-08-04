@@ -45,7 +45,13 @@ extension Score {
         offset = 0
         direction = .right
         runnerPoint = CGRect()
-        itemScore = ItemScore()
+        startGame = false
+        disableControl = true
+        newTresury = nil
+        itemScore.keys = false
+        itemScore.weapons = false
+        itemScore.coins = 0
+        itemScore.lives = 3
     }
 }
 

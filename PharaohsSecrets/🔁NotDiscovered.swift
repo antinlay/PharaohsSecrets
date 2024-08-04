@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct NotDiscovered: View {
+    @EnvironmentObject var router: Router
+    
     var body: some View {
         ZStack {
             fullScreenBackground(.Histories.background)
@@ -44,7 +46,7 @@ struct NotDiscovered: View {
                 }
                 .overlay(alignment: .bottom) {
                     Button {
-                        // к игре
+                        router.navigate(to: .menu)
                     } label: {
                         Image(.Game.button)
                     }
@@ -55,4 +57,5 @@ struct NotDiscovered: View {
 
 #Preview {
     NotDiscovered()
+        .environmentObject(Router())
 }

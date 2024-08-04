@@ -23,6 +23,7 @@ struct Menu: View {
             Image(.Menu.splash)
             Image(.Menu.startButton)
                 .onTapGesture {
+                    score.restart()
                     print(score.isFirstLaunch)
                     if score.isFirstLaunch {
                         router.navigate(to: .histories)
