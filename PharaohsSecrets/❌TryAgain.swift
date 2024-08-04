@@ -25,6 +25,7 @@ struct TryAgain: View {
                     .foregroundStyle(.white)
                 Image(.TryAgain.restart)
                     .onTapGesture {
+                        score.restart()
                         router.navigate(to: .game)
                     }
                 Image(.TryAgain.main)
@@ -39,4 +40,5 @@ struct TryAgain: View {
 #Preview {
     TryAgain()
         .environmentObject(Router())
+        .environmentObject(Score())
 }

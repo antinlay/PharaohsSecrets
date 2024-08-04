@@ -19,7 +19,11 @@ struct Game: View {
     
     @State var isPressing: Bool = false
     @State var isPause: Bool = false
-        
+    
+    @State private var timer: Timer?
+    @State private var offsetVertical: Double = 0
+
+    
     private var tapToContinue: some View {
         VStack {
             Text("START!")
@@ -37,7 +41,7 @@ struct Game: View {
             }
             score.disableControl = false
         }
-
+        
     }
     
     private var scoreboard: some View {
@@ -125,11 +129,34 @@ struct Game: View {
         }
     }
     
+    private func startAnimation() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
+            offsetVertical += 1
+        }
+    }
+    
     var body: some View {
         ZStack {
             fullScreenBackground(.Histories.background)
-            ArtefactsWall()
-            Ground()
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                ScrollViewReader { proxy in
+                    ArtefactsWall()
+                        .frame(maxHeight: .infinity, alignment: .bottom)
+                        .offset(y: offsetVertical)
+                        .task {
+                            startAnimation()
+                        }
+                    Ground()
+                        .frame(maxHeight: .infinity, alignment: .bottom)
+                }
+                .offset(x: score.offset >= 0 ? 0 : score.offset)
+            }
+            .scrollDisabled(true)
+            .scrollIndicators(.never)
+            .ignoresSafeArea()
+            
             treasuryStop
             GeometryReader { geometryRunner in
                 Runner(isPressing: $isPressing)

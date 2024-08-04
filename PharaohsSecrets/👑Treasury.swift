@@ -54,6 +54,7 @@ struct Treasury: View {
     @EnvironmentObject var score: Score
     
     @State private var selectedTab = 0
+    @State private var isShowingInfo = false
     
     private var indexTabView: some View {
         HStack(spacing: 14) {
@@ -104,7 +105,9 @@ struct Treasury: View {
             backButton
             VStack {
                 title
-                
+                    .onTapGesture {
+                        isShowingInfo = true
+                    }
                 TabView(selection: $selectedTab) {
                     horizontalGrid(0..<10, $score.treasury).tag(0)
                     horizontalGrid(10..<20, $score.treasury).tag(1)
@@ -116,6 +119,9 @@ struct Treasury: View {
                 
                 indexTabView
             }
+        }
+        .sheet(isPresented: $isShowingInfo) {
+            Adventure()
         }
     }
 }
