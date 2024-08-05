@@ -83,6 +83,7 @@ struct Parachute: View {
                                 if xCounter > 160 {
                                     router.navigate(to: .crashed)
                                 } else {
+                                    score.itemScore.coins *= xCounter
                                     isOpenChute = true
                                 }
                             }

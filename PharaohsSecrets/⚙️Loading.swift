@@ -18,7 +18,9 @@ struct Loading: View {
     var body: some View {
         ZStack {
             fullScreenBackground(.Loading.background)
+//                .scaleEffect(-1)
             splash
+                .rotationEffect(Angle(degrees: -90))
         }
         .onAppear {
             // Симулируем загрузку данных

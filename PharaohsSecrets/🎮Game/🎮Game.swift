@@ -20,9 +20,8 @@ struct Game: View {
     @State var isPressing: Bool = false
     @State var isPause: Bool = false
     
-    @State private var timer: Timer?
-    @State private var offsetVertical: Double = 0
-
+    private var appearTreasuryStop: Double = -4401
+    private var appearJumpStop: Double = -5301
     
     private var tapToContinue: some View {
         VStack {
@@ -83,11 +82,11 @@ struct Game: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
             .padding(.bottom, 26)
             .padding(.trailing, 80)
-            .offset(x: score.offset <= -4600 ? 0 : UIScreen.main.bounds.width)
-            .opacity(score.offset <= -4600 ? 1 : .zero)
+            .offset(x: score.offset <= appearTreasuryStop ? 0 : UIScreen.main.bounds.width)
+            .opacity(score.offset <= appearTreasuryStop ? 1 : .zero)
             .animation(.easeInOut(duration: 1.0), value: score.offset)
             .onChange(of: score.offset) { newValue in
-                if newValue == -4602 {
+                if newValue == appearTreasuryStop {
                     score.disableControl = true
                 }
             }
@@ -119,44 +118,21 @@ struct Game: View {
                 .padding(.trailing, 100)
                 .padding(.top, 50)
         }
-        .offset(x: score.offset <= -5300 ? 0 : UIScreen.main.bounds.width)
-        .opacity(score.offset <= -5300 ? 1 : .zero)
+        .offset(x: score.offset <= appearJumpStop ? 0 : UIScreen.main.bounds.width)
+        .opacity(score.offset <= appearJumpStop ? 1 : .zero)
         .animation(.easeInOut(duration: 1.0), value: score.offset)
         .onChange(of: score.offset) { newValue in
-            if newValue == -5301 {
+            if newValue == appearJumpStop {
                 score.disableControl = true
             }
         }
     }
-    
-    private func startAnimation() {
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
-            offsetVertical += 1
-        }
-    }
-    
+        
     var body: some View {
         ZStack {
             fullScreenBackground(.Histories.background)
-            
-            ScrollView(.horizontal, showsIndicators: false) {
-                ScrollViewReader { proxy in
-                    ArtefactsWall()
-                        .frame(maxHeight: .infinity, alignment: .bottom)
-                        .offset(y: offsetVertical)
-                        .task {
-                            startAnimation()
-                        }
-                    Ground()
-                        .frame(maxHeight: .infinity, alignment: .bottom)
-                }
-                .offset(x: score.offset >= 0 ? 0 : score.offset)
-            }
-            .scrollDisabled(true)
-            .scrollIndicators(.never)
-            .ignoresSafeArea()
-            
+            ArtefactsWall()
+            Ground()
             treasuryStop
             GeometryReader { geometryRunner in
                 Runner(isPressing: $isPressing)

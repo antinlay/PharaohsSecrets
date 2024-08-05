@@ -65,6 +65,7 @@ struct Control: View {
                             run(.left)
                         }
                 )
+                .defersSystemGestures(on: .all)
                 .disabled(score.disableControl)
                 .padding(.leading)
             Spacer()
@@ -77,6 +78,7 @@ struct Control: View {
                             run(.right)
                         }
                 )
+                .defersSystemGestures(on: .all)
                 .disabled(score.disableControl)
                 .padding(.trailing)
         }

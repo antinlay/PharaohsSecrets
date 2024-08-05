@@ -20,13 +20,15 @@ struct Ground: View {
     }
     
     var body: some View {
-                ground
-                        
-//            }
-//                
-//        }
-//        .scrollDisabled(false)
-        
+        ScrollView(.horizontal, showsIndicators: false) {
+            ground
+                .frame(maxHeight: .infinity, alignment: .bottom)
+                .animation(.linear(duration: 0.1), value: score.offset)
+                .offset(x: score.offset >= 0 ? 0 : score.offset)
+                .animation(.linear, value: score.offset)
+        }
+        .ignoresSafeArea()
+        .scrollDisabled(true)
     }
 }
 

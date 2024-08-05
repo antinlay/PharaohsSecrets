@@ -10,6 +10,9 @@ import SwiftUI
 struct ArtefactsWall: View {
     @EnvironmentObject var score: Score
     
+    @State private var timer: Timer?
+    @State private var offsetVertical: Double = 0
+    private let appearWall: Double = 1000
     
     private var gridItems: some View {
         LazyVGrid(columns: [GridItem(.fixed(100)), GridItem(.fixed(100)), GridItem(.fixed(100))], spacing: 10) {
@@ -29,7 +32,7 @@ struct ArtefactsWall: View {
     }
     
     private var horizontalGridItems: some View {
-        LazyHStack(spacing: 1000) {
+        HStack(spacing: 1000) {
             ForEach(0..<3, id: \.self) { index in
                 verticalGridItems
             }
@@ -37,26 +40,29 @@ struct ArtefactsWall: View {
     }
     
     var body: some View {
-//        ScrollViewReader { proxy in
-//            ScrollView([.horizontal, .vertical]) {
-        
+        ScrollViewReader { proxy in
+            ScrollView([.horizontal, .vertical]) {
                 horizontalGridItems
-//                    .offset(y: offsetVertical)
-//                    .offset(x: score.offset)
-//            }
-//            .scrollDisabled(false)
-//            .scrollIndicators(.never)
-//            .ignoresSafeArea()
-//            .task {
-//                withAnimation(.easeIn(duration: 100)) {
-//                    offsetVertical += 100000
-//                }
-//                proxy.scrollTo(99, anchor: .bottom)
-//                startAnimation()
-//            }
-//        }
+                    .offset(y: offsetVertical)
+                    .offset(x: appearWall + score.offset)
+            }
+            .ignoresSafeArea()
+            .scrollDisabled(true)
+            .scrollIndicators(.never)
+            .onAppear {
+                proxy.scrollTo(99, anchor: .trailing)
+                startAnimation()
+            }
+        }
     }
     
+    private func startAnimation() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
+            offsetVertical += 1
+        }
+    }
+
 }
 
 #Preview {
