@@ -62,9 +62,9 @@ struct Game: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .onChange(of: score.itemScore.lives) { newValue in
-            if newValue == 0 {
-                score.restart()
+            if newValue <= 0 {
                 router.navigate(to: .diedHistory)
+                score.restart()
             }
         }
     }
