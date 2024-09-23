@@ -1,5 +1,5 @@
 # Pharaoh's Secrets
-![alt text](adImage.png)
+![alt text](adImage.jpg)
 Pharaoh's Secrets is a SwiftUI game where you help a pharaoh uncover ancient secrets hidden in a pyramid. This project is currently in development.
 
 ## Features
