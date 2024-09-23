@@ -12,7 +12,7 @@ struct Ground: View {
     
     private var ground: some View {
         HStack(alignment: .bottom, spacing: 0) {
-            ForEach(0..<7, id: \.self) { index in
+            ForEach(0..<7) { index in
                 Image(.Game.ground)
             }
             Image(.Game.miniFire)
